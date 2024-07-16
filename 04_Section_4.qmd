@@ -1,15 +1,62 @@
 ---
 title: Logistic Regression
 format: html
+navbar: false
 filters:
   - pyodide
 ---
 
 ## Logistic Regression
 
-[Fill description]{style="color:red;"}.
+First, let's try to draw a line!
 
 ### Quiz : Draw a line!
+
+```{pyodide-python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+hours = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 4.0, 4.25, 4.5, 4.75, 5.0, 5.5]
+passed = [0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1]
+
+def plot_line(func, label):
+    x = np.linspace(0, 6, 100)
+    y = func(x)
+    if np.isscalar(y):
+        y = np.full_like(x, y)
+    plt.plot(x, y, label=label)
+
+plt.figure(figsize=(10, 6))
+plt.scatter(hours, passed)
+
+# Example lines
+plot_line(lambda x: 1, 'y = 1')
+# plot_line(lambda x: 2*x + 5, 'y = 2x + 5')
+# plot_line(lambda x: np.log(x), 'y = log(x)')
+## Vertical line
+# plt.axvline(x=0.5, color='purple', linestyle='--', label='x = 0.5')
+
+plt.xlabel('Hours')
+plt.ylabel('Pass')
+plt.title('Pass vs Hours Studied (with Various Lines)')
+plt.legend()
+plt.ylim(-0.1,1.1)  # Adjust y-axis limits for better visibility
+plt.show()
+```
+
+Logistic regression is a statistical method used for predicting a binary outcome based on one or more independent variables. The outcome is modeled as a probability between 0 and 1. It models the probability of an event occurring as a function of the independent variables using the sigmoid curve, which is defined as:
+
+$$\sigma(x) = \frac{1}{1+e^{-x}}$$
+
+### Importance of logistic regression
+
+1. Interpretability: The coefficients can be interpreted as the change in log-odds of the outcome for a one-unit change in the predictor.
+
+
+2. Handles non-linear relationships: The sigmoid curve can model non-linear relationships between variables.
+
+
+3. Relatively simple and Provides probability estimates: It's a simple model and thus less prone to overfitting compared to more complex models. Furthermore, unlike some other classification methods, it gives probabilities of outcomes.
 
 
 ## Train-Test Split
@@ -57,6 +104,12 @@ Can you try to delete the class weight and changing the C-value to observe what 
 :::
 
 ## Feature Importance
+
+Feature importance indicates how much each input variable (feature) contributes to predicting the outcome. In logistic regression, the log-odds of the outcome are modeled as a linear combination of features:
+
+$$log(p/(1-p)) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$$
+
+The magnitude of each coefficient $|\beta_i|$ represents how much the log-odds change for a one-unit increase in the corresponding feature $x_i$, holding other features constant. Larger  $|\beta_i|$  implies a stronger effect on the outcome probability, hence greater importance.
 
 ```{pyodide-python}
 feature_importance = pd.DataFrame({

@@ -164,7 +164,7 @@
     "href": "04_Section_4.html",
     "title": "4  Logistic Regression",
     "section": "",
-    "text": "4.1 Logistic Regression\nFill description.",
+    "text": "4.1 Logistic Regression\nFirst, let’s try to draw a line!",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Logistic Regression</span>"
     ]
@@ -174,7 +174,7 @@
     "href": "04_Section_4.html#logistic-regression",
     "title": "4  Logistic Regression",
     "section": "",
-    "text": "4.1.1 Quiz : Draw a line!",
+    "text": "4.1.1 Quiz : Draw a line!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nLogistic regression is a statistical method used for predicting a binary outcome based on one or more independent variables. The outcome is modeled as a probability between 0 and 1. It models the probability of an event occurring as a function of the independent variables using the sigmoid curve, which is defined as:\n\\[\\sigma(x) = \\frac{1}{1+e^{-x}}\\]\n\n\n4.1.2 Importance of logistic regression\n\nInterpretability: The coefficients can be interpreted as the change in log-odds of the outcome for a one-unit change in the predictor.\nHandles non-linear relationships: The sigmoid curve can model non-linear relationships between variables.\nRelatively simple and Provides probability estimates: It’s a simple model and thus less prone to overfitting compared to more complex models. Furthermore, unlike some other classification methods, it gives probabilities of outcomes.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Logistic Regression</span>"
     ]
@@ -204,7 +204,7 @@
     "href": "04_Section_4.html#feature-importance",
     "title": "4  Logistic Regression",
     "section": "4.4 Feature Importance",
-    "text": "4.4 Feature Importance\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\\(\\,\\)",
+    "text": "4.4 Feature Importance\nFeature importance indicates how much each input variable (feature) contributes to predicting the outcome. In logistic regression, the log-odds of the outcome are modeled as a linear combination of features:\n\\[log(p/(1-p)) = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2 + ... + \\beta_n x_n\\]\nThe magnitude of each coefficient \\(|\\beta_i|\\) represents how much the log-odds change for a one-unit increase in the corresponding feature \\(x_i\\), holding other features constant. Larger \\(|\\beta_i|\\) implies a stronger effect on the outcome probability, hence greater importance.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\\(\\,\\)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Logistic Regression</span>"
     ]
@@ -214,7 +214,7 @@
     "href": "05_Section_5.html",
     "title": "5  Decision Tree",
     "section": "",
-    "text": "5.1 Decision Tree\nFill description.",
+    "text": "5.1 Decision Tree\nDecision trees are tree-like models that make decisions based on asking a series of questions about the features of the data. Starting from a root node, the tree splits the data into subsets based on the most significant attribute at each step. This process continues recursively, forming branches and leaves, until a stopping criterion is met. The leaf nodes represent the final decisions or predictions.\nDecision trees are valuable for their simplicity and interpretability. Beyond healthcare, decision trees are useful in various fields such as finance, healthcare, and customer segmentation.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Decision Tree</span>"
     ]

@@ -1,13 +1,16 @@
 ---
 title: Decision Tree
 format: html
+navbar: false
 filters:
   - pyodide
 ---
 
 ## Decision Tree
 
-[Fill description]{style="color:red;"}.
+Decision trees are tree-like models that make decisions based on asking a series of questions about the features of the data. Starting from a root node, the tree splits the data into subsets based on the most significant attribute at each step. This process continues recursively, forming branches and leaves, until a stopping criterion is met. The leaf nodes represent the final decisions or predictions.
+
+Decision trees are valuable for their simplicity and interpretability. Beyond healthcare, decision trees are useful in various fields such as finance, healthcare, and customer segmentation.
 
 
 ## Train-Test Split
