@@ -7,13 +7,9 @@ execute:
 
 ## Visualization
 
-[Fill description]{style="color:red;"}.
-
 
 ## Univariate: Categorial Variables
 
-
-[Fill description]{style="color:red;"}.
 
 ::: {.callout-tip appearance="simple"}
 Select a categorical column to visualize:
@@ -52,7 +48,9 @@ Plot.plot({
 
 ## What did you observe about patient cohort and sex?
 
-We see that they are approximately equal amount of female and males, and even though cohort 1 has more patients than cohort 2, there are approximately similar!
+Will be updated after 
+
+<!-- We see that they are approximately equal amount of female and males, and even though cohort 1 has more patients than cohort 2, there are approximately similar! -->
 
 :::
 
@@ -60,18 +58,17 @@ We see that they are approximately equal amount of female and males, and even th
 
 ## What did you observe about diagnosis (target variable)?
 
- We see that around 400 patients who does not have cancers, while only approximately 180 patients have cancers! That implies only approximately 30% of our data is pancreatic cancer patients!
+Will be released
+
+<!--We see that around 400 patients who does not have cancers, while only approximately 180 patients have cancers! That implies only approximately 30% of our data is pancreatic cancer patients!
  
  **Brain teaser: What impact it might have? **
  
-*Hint: Think about evalaution metrics, and whether it is enough information to train a classifiers!*
+*Hint: Think about evalaution metrics, and whether it is enough information to train a classifiers!* -->
 
 :::
 
 ## Univariate: Continuous Variables
-
-[Fill description]{style="color:red;"}.
-
 
 ::: {.callout-tip appearance="simple"}
 Select a continuous column to visualize:
@@ -101,11 +98,8 @@ Plot.plot({
 })
 ```
 
-[Fill thoughts]{style="color:red;"}.
 
 ## Bivariate: Categorial Variables
-
-[Fill description]{style="color:red;"}.
 
 ::: {.callout-tip appearance="simple"}
 Select a column to compare against diagnosis:
@@ -165,13 +159,11 @@ Plot.plot({
 
 ### What did you observe?
 
-[Fill thoughts]{style="color:red;"}.
 
 
 
 ## Bivariate: Continuous Variables
 
-[Fill description about heatmap]{style="color:red;"}.
 
 
 ::: {.callout-tip appearance="simple"}
@@ -272,8 +264,6 @@ Plot.plot({
 ```
 
 ### What did you observe?
-
-[Fill thoughts]{style="color:red;"}.
 
 
 $\,$

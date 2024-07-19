@@ -41,7 +41,9 @@ The ratio of correctly predicted instances to the total instances. Mathematicall
 
 ## Why can't we blindly trust accuracy?
 
-In our dataset, 30% of the people are diagnosed with pancreatic cancer, and 70% are not. If we rely only on accuracy, our model could just predict everyone as not having cancer and still be 70% accurate. This doesn't help us identify those who actually have cancer. That's why we need to look at other metrics like precision and recall to ensure our model is correctly identifying both those with and without the disease.
+Will be released after the section
+
+<!-- In our dataset, 30% of the people are diagnosed with pancreatic cancer, and 70% are not. If we rely only on accuracy, our model could just predict everyone as not having cancer and still be 70% accurate. This doesn't help us identify those who actually have cancer. That's why we need to look at other metrics like precision and recall to ensure our model is correctly identifying both those with and without the disease.-->
 
 :::
 
@@ -53,9 +55,11 @@ Before we move on to talk about precision, recall & F1 score, we would like you 
 
 ## What is the impact of false positive and false negative in diagnosing pancreas cancer?
 
-**False Positive:** The patient doesn't have pancreatic cancer, but the AI incorrectly diagnoses them with it. This can lead to unnecessary tests and procedures, causing stress and potential harm.
+Will be released after the section
 
-**False Negative:** The patient has pancreatic cancer, but the AI incorrectly diagnoses them as not having it. This is very dangerous as the patient misses the chance for early treatment, leading to potentially severe consequences.
+<!-- **False Positive:** The patient doesn't have pancreatic cancer, but the AI incorrectly diagnoses them with it. This can lead to unnecessary tests and procedures, causing stress and potential harm.
+
+**False Negative:** The patient has pancreatic cancer, but the AI incorrectly diagnoses them as not having it. This is very dangerous as the patient misses the chance for early treatment, leading to potentially severe consequences. -->
 
 :::
 
@@ -107,7 +111,9 @@ print("F1 Score: ", np.round(f1_score(y_test, y_pred_baseline, zero_division=0),
 
 ## Why is precision, recall and F1 score are all 0 in our case?
 
-Precision, recall, and F1 score are all zero because the baseline model predicts all patients as negative (no PDAC), resulting in no true positives! 
+Will be released after the section
+
+<!-- Precision, recall, and F1 score are all zero because the baseline model predicts all patients as negative (no PDAC), resulting in no true positives! -->
 
 **Did you realize the importance of different metrics in judging performance?**
 
