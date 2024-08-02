@@ -233,7 +233,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"options":{"read-only":"false","fig-width":7,"autorun":"","label":"","output":"true","comment":"","fig-cap":"","dpi":72,"results":"markup","context":"interactive","message":"true","fig-height":5,"out-height":"","warning":"true","out-width":"700px","classes":""},"code":"import matplotlib.pyplot as plt\nimport numpy as np\n\nhours = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 4.0, 4.25, 4.5, 4.75, 5.0, 5.5]\npassed = [0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1]\n\ndef plot_line(func, label):\n    x = np.linspace(0, 6, 100)\n    y = func(x)\n    if np.isscalar(y):\n        y = np.full_like(x, y)\n    plt.plot(x, y, label=label)\n\nplt.figure(figsize=(10, 6))\nplt.scatter(hours, passed)\n\n# Example lines\nplot_line(lambda x: 1, 'y = 1')\n# plot_line(lambda x: 2*x + 5, 'y = 2x + 5')\n# plot_line(lambda x: np.log(x), 'y = log(x)')\n## Vertical line\n# plt.axvline(x=0.5, color='purple', linestyle='--', label='x = 0.5')\n\nplt.xlabel('Hours')\nplt.ylabel('Pass')\nplt.title('Pass vs Hours Studied (with Various Lines)')\nplt.legend()\nplt.ylim(-0.1,1.1)  # Adjust y-axis limits for better visibility\nplt.show()"},{"id":2,"options":{"read-only":"false","fig-width":7,"autorun":"","label":"","output":"true","comment":"","fig-cap":"","dpi":72,"results":"markup","context":"interactive","message":"true","fig-height":5,"out-height":"","warning":"true","out-width":"700px","classes":""},"code":"import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix\n\ndata_url = \"https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv\"\ndata = pd.read_csv(data_url)\nfeatures = data.drop(\"diagnosis\", axis = 1) \ntarget = data.diagnosis\nX_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)\nprint(\"X train shape: \", X_train.shape)\nprint(\"X test shape: \", X_test.shape)"},{"id":3,"options":{"read-only":"false","fig-width":7,"autorun":"","label":"","output":"true","comment":"","fig-cap":"","dpi":72,"results":"markup","context":"interactive","message":"true","fig-height":5,"out-height":"","warning":"true","out-width":"700px","classes":""},"code":"import numpy as np\nLR_model = LogisticRegression(max_iter=10000, C=1.0, class_weight=\"balanced\")\nLR_model.fit(X_train, y_train)\ny_pred_LR = LR_model.predict(X_test)\nprint(\"Accuracy: \", np.round(accuracy_score(y_test, y_pred_LR), 2))\nprint(\"Precision: \",np.round(precision_score(y_test, y_pred_LR), 2))\nprint(\"Recall: \", np.round(recall_score(y_test, y_pred_LR), 2))\nprint(\"F1 Score: \", np.round(f1_score(y_test, y_pred_LR), 2))"},{"id":4,"options":{"read-only":"false","fig-width":7,"autorun":"","label":"","output":"true","comment":"","fig-cap":"","dpi":72,"results":"markup","context":"interactive","message":"true","fig-height":5,"out-height":"","warning":"true","out-width":"700px","classes":""},"code":"feature_importance = pd.DataFrame({\n    'Feature': X_train.columns,\n    'Importance': LR_model.coef_[0]\n})\n\nfeature_importance = feature_importance.sort_values(by='Importance', ascending=False)\nfeature_importance"}];
+globalThis.qpyodideCellDetails = [{"code":"# importing libraries\nimport pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix\n\n# reading data and defining features\ndata_url = \"https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv\"\ndata = pd.read_csv(data_url)\nfeatures = data.drop(\"diagnosis\", axis = 1) \ntarget = data.diagnosis\n\n# train-test split\nX_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)\n\n# print to make sure train-test split suggest\nprint(\"X train shape: \", X_train.shape)\nprint(\"X test shape: \", X_test.shape)\n\n# call on logistic regression function imported\nLR_model = LogisticRegression(max_iter=10000, C=1.0, class_weight=\"balanced\")\n\n# train the model\nLR_model.fit(X_train, y_train)\n\n# test the model\ny_pred_LR = LR_model.predict(X_test)\n\n# print result\nprint(\"Accuracy: \", np.round(accuracy_score(y_test, y_pred_LR), 2))\nprint(\"Precision: \",np.round(precision_score(y_test, y_pred_LR), 2))\nprint(\"Recall: \", np.round(recall_score(y_test, y_pred_LR), 2))\nprint(\"F1 Score: \", np.round(f1_score(y_test, y_pred_LR), 2))","id":1,"options":{"context":"interactive","autorun":"","label":"","fig-height":5,"out-height":"","results":"markup","output":"true","fig-cap":"","comment":"","classes":"","out-width":"700px","warning":"true","message":"true","fig-width":7,"read-only":"false","dpi":72}},{"code":"feature_importance = pd.DataFrame({\n    'Feature': X_train.columns,\n    'Importance': LR_model.coef_[0]\n})\n\nfeature_importance = feature_importance.sort_values(by='Importance', ascending=False)\nfeature_importance","id":2,"options":{"context":"interactive","autorun":"","label":"","fig-height":5,"out-height":"","results":"markup","output":"true","fig-cap":"","comment":"","classes":"","out-width":"700px","warning":"true","message":"true","fig-width":7,"read-only":"false","dpi":72}}];
 
 
 </script>
@@ -548,12 +548,10 @@ window.Quarto = {
   <ul>
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link active" data-scroll-target="#logistic-regression"><span class="header-section-number">4.1</span> Logistic Regression</a>
   <ul class="collapse">
-  <li><a href="#quiz-draw-a-line" id="toc-quiz-draw-a-line" class="nav-link" data-scroll-target="#quiz-draw-a-line"><span class="header-section-number">4.1.1</span> Quiz : Draw a line!</a></li>
-  <li><a href="#importance-of-logistic-regression" id="toc-importance-of-logistic-regression" class="nav-link" data-scroll-target="#importance-of-logistic-regression"><span class="header-section-number">4.1.2</span> Importance of logistic regression</a></li>
+  <li><a href="#importance-of-logistic-regression" id="toc-importance-of-logistic-regression" class="nav-link" data-scroll-target="#importance-of-logistic-regression"><span class="header-section-number">4.1.1</span> Importance of logistic regression</a></li>
   </ul></li>
-  <li><a href="#train-test-split" id="toc-train-test-split" class="nav-link" data-scroll-target="#train-test-split"><span class="header-section-number">4.2</span> Train-Test Split</a></li>
-  <li><a href="#algorithm" id="toc-algorithm" class="nav-link" data-scroll-target="#algorithm"><span class="header-section-number">4.3</span> Algorithm</a></li>
-  <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance"><span class="header-section-number">4.4</span> Feature Importance</a></li>
+  <li><a href="#implementation-of-algorithm" id="toc-implementation-of-algorithm" class="nav-link" data-scroll-target="#implementation-of-algorithm"><span class="header-section-number">4.2</span> Implementation of Algorithm</a></li>
+  <li><a href="#feature-importance" id="toc-feature-importance" class="nav-link" data-scroll-target="#feature-importance"><span class="header-section-number">4.3</span> Feature Importance</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -648,16 +646,10 @@ $$
 
 <section id="logistic-regression" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">4.1</span> Logistic Regression</h2>
-<p>First, let’s try to draw a line!</p>
-<section id="quiz-draw-a-line" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="quiz-draw-a-line"><span class="header-section-number">4.1.1</span> Quiz : Draw a line!</h3>
-<div id="qpyodide-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Logistic regression is a statistical method used for predicting a binary outcome based on one or more independent variables. The outcome is modeled as a probability between 0 and 1. It models the probability of an event occurring as a function of the independent variables using the sigmoid curve, which is defined as:</p>
 <p><span class="math display">\[\sigma(x) = \frac{1}{1+e^{-x}}\]</span></p>
-</section>
-<section id="importance-of-logistic-regression" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="importance-of-logistic-regression"><span class="header-section-number">4.1.2</span> Importance of logistic regression</h3>
+<section id="importance-of-logistic-regression" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="importance-of-logistic-regression"><span class="header-section-number">4.1.1</span> Importance of logistic regression</h3>
 <ol type="1">
 <li><p>Interpretability: The coefficients can be interpreted as the change in log-odds of the outcome for a one-unit change in the predictor.</p></li>
 <li><p>Handles non-linear relationships: The sigmoid curve can model non-linear relationships between variables.</p></li>
@@ -665,17 +657,10 @@ $$
 </ol>
 </section>
 </section>
-<section id="train-test-split" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="train-test-split"><span class="header-section-number">4.2</span> Train-Test Split</h2>
-<p><span style="color:red;">Fill description</span>.</p>
-<p>First, we will perform a train-test split.</p>
-<div id="qpyodide-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="algorithm" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="algorithm"><span class="header-section-number">4.3</span> Algorithm</h2>
+<section id="implementation-of-algorithm" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="implementation-of-algorithm"><span class="header-section-number">4.2</span> Implementation of Algorithm</h2>
 <p>Next, we will run logistic regression on our training dataset, then compute the performance of the metrics using our dataset and then</p>
-<div id="qpyodide-insertion-location-3"></div>
+<div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -683,17 +668,17 @@ $$
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Can you try to delete the class weight and changing the C-value to observe what happened to the performance of the algorithm?</p>
+<p>Can you try to delete the class weight to observe what happened to the performance of the algorithm?</p>
 </div>
 </div>
 </div>
 </section>
-<section id="feature-importance" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="feature-importance"><span class="header-section-number">4.4</span> Feature Importance</h2>
+<section id="feature-importance" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="feature-importance"><span class="header-section-number">4.3</span> Feature Importance</h2>
 <p>Feature importance indicates how much each input variable (feature) contributes to predicting the outcome. In logistic regression, the log-odds of the outcome are modeled as a linear combination of features:</p>
 <p><span class="math display">\[log(p/(1-p)) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n\]</span></p>
 <p>The magnitude of each coefficient <span class="math inline">\(|\beta_i|\)</span> represents how much the log-odds change for a one-unit increase in the corresponding feature <span class="math inline">\(x_i\)</span>, holding other features constant. Larger <span class="math inline">\(|\beta_i|\)</span> implies a stronger effect on the outcome probability, hence greater importance.</p>
-<div id="qpyodide-insertion-location-4"></div>
+<div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><span class="math inline">\(\,\)</span></p>
 
@@ -1278,7 +1263,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script type="module">
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script type="text/javascript" src="page-nav-foot.js"></script>
+<script type="module">
 /**
  * Factory function to create different types of cells based on options.
  * @param {Object} cellData - JSON object containing code, id, and options.

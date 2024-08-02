@@ -5,10 +5,35 @@ execute:
 
 ---
 
-## Visualization
+## Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) is the process of analyzing data sets to summarize their main characteristics, often using visual methods.
+
+It’s a critical step in the data analysis workflow, providing insights into the structure, patterns, and relationships within the data.
+
+In short, EDA is important for the following reason:
+
+- EDA helps you to **understand the nuances in your data**
+- EDA helps **ensure the quality and reliability of your data**
+- EDA is the **foundation** for complex analyses as it helps with features selection, hypothesis generation, and determining the research direction. 
 
 
-## Univariate: Categorial Variables
+## Categorial Features
+
+
+Features that can only take in a specific set of values, often counted in whole number. For example, 
+
+- Coin flips: 0 or 1
+- Days of the Week: Monday, Tuesday, Wednesday etc
+- Class Grades: Students can receive specific grades like A, B, C, D, or F.
+
+To visualize categorical variables, we normally use **bar plot**.
+
+### Bar Plot
+
+A bar plot is a chart that uses bars to represent the frequency or count of different categories of a discrete variable.
+
+Bar plots are ideal for discrete variables because they clearly show the count or frequency of each category, making it easy to compare them.
 
 
 ::: {.callout-tip appearance="simple"}
@@ -48,7 +73,7 @@ Plot.plot({
 
 ## What did you observe about patient cohort and sex?
 
-Will be updated after 
+Will be updated after section.
 
 <!-- We see that they are approximately equal amount of female and males, and even though cohort 1 has more patients than cohort 2, there are approximately similar! -->
 
@@ -58,7 +83,7 @@ Will be updated after
 
 ## What did you observe about diagnosis (target variable)?
 
-Will be released
+Will be released after section.
 
 <!--We see that around 400 patients who does not have cancers, while only approximately 180 patients have cancers! That implies only approximately 30% of our data is pancreatic cancer patients!
  
@@ -68,7 +93,34 @@ Will be released
 
 :::
 
-## Univariate: Continuous Variables
+::: {.callout-note collapse="true" appearance="simple"}
+
+## What did you observe about diagnosis (target variable)?
+
+*Hint: Think about evalaution metrics, and whether it is enough information to train a classifiers!*
+
+Will be released after section.
+
+:::
+
+## Continuous Features
+
+Continuous variables are features that can take any value within a given range, often measured and including fractions or decimals. For example,
+
+- Height: A person’s height can be any value within a range (e.g., 150.5 cm, 170.2 cm).
+- Temperature: Temperature can vary continuously (e.g., 22.3°C, 35.6°C).
+- Weight: Weight can take on any value within a range (e.g., 55.5 kg, 72.8 kg).
+
+We uses **histogram** to visualize the continuous variables.
+
+
+### Histogram
+
+A histogram is a chart that uses bars to represent the distribution of a continuous variable, showing the frequency of data within certain ranges or bins.
+
+Histogram makes it easier to identify patterns, such as skewness, central tendency, and the presence of outliers.
+
+
 
 ::: {.callout-tip appearance="simple"}
 Select a continuous column to visualize:
@@ -98,8 +150,28 @@ Plot.plot({
 })
 ```
 
+::: {.callout-note collapse="true" appearance="simple"}
 
-## Bivariate: Categorial Variables
+## What happened when you increase/decrease the number of bins?
+
+Will be released after section.
+
+:::
+
+::: {.callout-note collapse="true" appearance="simple"}
+
+## What did you observe about distribution of the features?
+
+*Hint: Look Out for extreme values and think about how it might impact!*
+
+Will be released after section.
+
+:::
+
+
+## Relationship Analysis
+
+### Between Categorical Variable
 
 ::: {.callout-tip appearance="simple"}
 Select a column to compare against diagnosis:
@@ -157,19 +229,78 @@ Plot.plot({
 
 ```
 
-### What did you observe?
+::: {.callout-note collapse="true" appearance="simple"}
+
+## What did you observe (especially for patient cohort!)?
+
+Will be released after section.
+
+:::
+
+
+### Between Continuous Variables
+
+#### Scatterplot
+
+A **scatterplot** is a type of data visualization that displays individual data points on a two-dimensional graph.
+
+- Each point on the scatterplot represents an observation from a dataset, with its position determined by two variables—one plotted on the x-axis and the other on the y-axis.
+- Scatterplots are commonly used to explore the relationship between two continuous variables to reveal patterns, trends, correlations, or clusters within the data.
+
+
+#### Linear Regression
+
+ **Linear regression** is a statistical method used to model and analyze the relationship between two variables by fitting a linear equation to the observed data.
+ 
+- The linear equation is typically of the form: $y = mx + c$, where:
+
+  - $y$  is the dependent variable (the outcome we are trying to predict or explain),
+  - $x$  is the independent variable (the predictor or input variable),
+  - $m$   is the slope of the line (indicating the change in $y$ for a unit change in $x$).
+  - $c$  is the y-intercept (the value of $y$ when $x$ is 0).
+
+::: {.callout-tip appearance="simple"}
+
+Select a X-Axis and Y-Axis Column:
+
+```{ojs}
+bivariate_cont_columns = ['age', 'LYVE1', 'REG1B', 'TFF1', 'REG1A', 'creatinine', 'plasma_CA19_9']
+viewof x_column = Inputs.radio(bivariate_cont_columns, {value: 'age'})
+viewof y_column = Inputs.radio(bivariate_cont_columns, {value: 'LYVE1'})
+```
+:::
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.dot(data, {x: x_column, y: y_column, fill: "steelblue"}),
+    Plot.linearRegressionY(data, {x: x_column, y: y_column, stroke: "red"})
+  ],
+  x: {
+    label: x_column
+  },
+  y: {
+    label: y_column
+  },
+  color: {
+    legend: false
+  }
+})
+```
 
 
 
+#### Correlation
 
-## Bivariate: Continuous Variables
+**Correlation** measures how two things are related to each other, like how one changes when the other does.
 
-
+- **Positive correlation** means as one thing increases, the other also increases (e.g., more study time, better grades).
+- **Negative correlation** means as one thing increases, the other decreases (e.g., more exercise, lower stress).
 
 ::: {.callout-tip appearance="simple"}
 Select Continuous Variables for Correlation Heatmap:
 ```{ojs}
-bivariate_cont_columns = ['age', 'LYVE1', 'REG1B', 'TFF1', 'REG1A', 'creatinine', 'plasma_CA19_9']
+
 viewof selected_bivariate_cont_columns = Inputs.checkbox(bivariate_cont_columns, {value: bivariate_cont_columns})
 ```
 :::
@@ -238,32 +369,55 @@ Plot.plot({
 
 ```
 
-### Try to match it on a scatterplot!
+::: {.callout-note collapse="true" appearance="simple"}
+
+## What did you observe about features relationship?
+
+Will be released after section.
+
+:::
+
+::: {.callout-note collapse="true" appearance="simple"}
+
+## Any relationship between the linear regression line and correlation that you observed?
+
+Will be released after section.
+
+:::
+
+
+## Relationship by target variable
+
+The scatterplot colored by the "diagnosis" variable visually represents the relationship between the selected features and the target outcome. By plotting the data points and coloring them based on the binary diagnosis (e.g., positive or negative), you can quickly see patterns or clusters that indicate how the features are associated with the diagnosis. 
 
 ::: {.callout-tip appearance="simple"}
 
 Select a X-Axis and Y-Axis Column:
 
 ```{ojs}
-viewof x_column = Inputs.radio(bivariate_cont_columns, {value: 'age'})
-viewof y_column = Inputs.radio(bivariate_cont_columns, {value: 'LYVE1'})
+viewof x_column_scatt = Inputs.radio(bivariate_cont_columns, {value: 'age'})
+viewof y_column_scatt = Inputs.radio(bivariate_cont_columns, {value: 'LYVE1'})
+```
+:::
+
+```{ojs}
 Plot.plot({
   marks: [
-    Plot.dot(data, {x: x_column, y: y_column, fill: "steelblue"})
+    Plot.dot(data, {x: x_column_scatt, y: y_column_scatt, fill: "diagnosis", fillOpacity: 0.7})
   ],
   x: {
-    label: x_column
+    label: x_column_scatt
   },
   y: {
-    label: y_column
+    label: y_column_scatt
   },
   color: {
-    legend: false
+    domain: [1, 0], // Assuming "diagnosis" has binary labels like "positive" and "negative"
+    range: ["blue", "orange"], // Use contrasting colors like blue and orange
+    legend: true // Shows a legend for the binary categories
   }
 })
 ```
-
-### What did you observe?
 
 
 $\,$

@@ -8,42 +8,6 @@ filters:
 
 ## Logistic Regression
 
-First, let's try to draw a line!
-
-### Quiz : Draw a line!
-
-```{pyodide-python}
-import matplotlib.pyplot as plt
-import numpy as np
-
-hours = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 4.0, 4.25, 4.5, 4.75, 5.0, 5.5]
-passed = [0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1]
-
-def plot_line(func, label):
-    x = np.linspace(0, 6, 100)
-    y = func(x)
-    if np.isscalar(y):
-        y = np.full_like(x, y)
-    plt.plot(x, y, label=label)
-
-plt.figure(figsize=(10, 6))
-plt.scatter(hours, passed)
-
-# Example lines
-plot_line(lambda x: 1, 'y = 1')
-# plot_line(lambda x: 2*x + 5, 'y = 2x + 5')
-# plot_line(lambda x: np.log(x), 'y = log(x)')
-## Vertical line
-# plt.axvline(x=0.5, color='purple', linestyle='--', label='x = 0.5')
-
-plt.xlabel('Hours')
-plt.ylabel('Pass')
-plt.title('Pass vs Hours Studied (with Various Lines)')
-plt.legend()
-plt.ylim(-0.1,1.1)  # Adjust y-axis limits for better visibility
-plt.show()
-```
-
 Logistic regression is a statistical method used for predicting a binary outcome based on one or more independent variables. The outcome is modeled as a probability between 0 and 1. It models the probability of an event occurring as a function of the independent variables using the sigmoid curve, which is defined as:
 
 $$\sigma(x) = \frac{1}{1+e^{-x}}$$
@@ -59,39 +23,43 @@ $$\sigma(x) = \frac{1}{1+e^{-x}}$$
 3. Relatively simple and Provides probability estimates: It's a simple model and thus less prone to overfitting compared to more complex models. Furthermore, unlike some other classification methods, it gives probabilities of outcomes.
 
 
-## Train-Test Split
-
-[Fill description]{style="color:red;"}.
-
-First, we will perform a train-test split.
-
-```{pyodide-python}
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix
-
-data_url = "https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv"
-data = pd.read_csv(data_url)
-features = data.drop("diagnosis", axis = 1) 
-target = data.diagnosis
-X_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)
-print("X train shape: ", X_train.shape)
-print("X test shape: ", X_test.shape)
-```
-
-
-## Algorithm
+## Implementation of Algorithm
 
 
 Next, we will run logistic regression on our training dataset, then compute the performance of the metrics using our dataset and then 
 
 
 ```{pyodide-python}
+# importing libraries
+import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix
+
+# reading data and defining features
+data_url = "https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv"
+data = pd.read_csv(data_url)
+features = data.drop("diagnosis", axis = 1) 
+target = data.diagnosis
+
+# train-test split
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)
+
+# print to make sure train-test split suggest
+print("X train shape: ", X_train.shape)
+print("X test shape: ", X_test.shape)
+
+# call on logistic regression function imported
 LR_model = LogisticRegression(max_iter=10000, C=1.0, class_weight="balanced")
+
+# train the model
 LR_model.fit(X_train, y_train)
+
+# test the model
 y_pred_LR = LR_model.predict(X_test)
+
+# print result
 print("Accuracy: ", np.round(accuracy_score(y_test, y_pred_LR), 2))
 print("Precision: ",np.round(precision_score(y_test, y_pred_LR), 2))
 print("Recall: ", np.round(recall_score(y_test, y_pred_LR), 2))
@@ -100,7 +68,7 @@ print("F1 Score: ", np.round(f1_score(y_test, y_pred_LR), 2))
 
 ::: {.callout-tip appearance="simple"}
 
-Can you try to delete the class weight and changing the C-value to observe what happened to the performance of the algorithm?
+Can you try to delete the class weight to observe what happened to the performance of the algorithm?
 :::
 
 ## Feature Importance
