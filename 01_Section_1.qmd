@@ -24,11 +24,24 @@ data_r <- read_csv("cleaned_dataset.csv",show_col_types = FALSE)
 datatable(data_r)
 ```
 
+::: {.callout-tip appearance="simple"}
+
+We defined **features** and **target variable** as follow:
+
+- Features: These are the input variables or predictors in a dataset that are used to make predictions or understand patterns.
+
+- Target Variable: This is the output variable or the outcome you want to predict or explain, based on the features.
+
+:::
+
+
+
 ::: {.callout-tip collapse="true" appearance="simple"}
 
 ## What's our target variable?
 
-Our Target Variable is the diagnosis column. Diagnosis = 0 indicates patient that does not have cancer and diagnosis = 1 indicates that patient is diagnosed with Pancreatic ductal adenocarcinoma (PDAC).
+Will be released after our section. 
+<!-- Our Target Variable is the diagnosis column. Diagnosis = 0 indicates patient that does not have cancer and diagnosis = 1 indicates that patient is diagnosed with Pancreatic ductal adenocarcinoma (PDAC). -->
 
 :::
 

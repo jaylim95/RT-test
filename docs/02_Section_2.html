@@ -230,20 +230,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link active" data-scroll-target="#visualization"><span class="header-section-number">2.1</span> Visualization</a></li>
-  <li><a href="#univariate-categorial-variables" id="toc-univariate-categorial-variables" class="nav-link" data-scroll-target="#univariate-categorial-variables"><span class="header-section-number">2.2</span> Univariate: Categorial Variables</a>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link active" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2.1</span> Exploratory Data Analysis</a></li>
+  <li><a href="#categorial-features" id="toc-categorial-features" class="nav-link" data-scroll-target="#categorial-features"><span class="header-section-number">2.2</span> Categorial Features</a>
   <ul class="collapse">
-  <li><a href="#what-did-you-observe" id="toc-what-did-you-observe" class="nav-link" data-scroll-target="#what-did-you-observe"><span class="header-section-number">2.2.1</span> What did you observe?</a></li>
+  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"><span class="header-section-number">2.2.1</span> Bar Plot</a></li>
+  <li><a href="#what-did-you-observe" id="toc-what-did-you-observe" class="nav-link" data-scroll-target="#what-did-you-observe"><span class="header-section-number">2.2.2</span> What did you observe?</a></li>
   </ul></li>
-  <li><a href="#univariate-continuous-variables" id="toc-univariate-continuous-variables" class="nav-link" data-scroll-target="#univariate-continuous-variables"><span class="header-section-number">2.3</span> Univariate: Continuous Variables</a></li>
-  <li><a href="#bivariate-categorial-variables" id="toc-bivariate-categorial-variables" class="nav-link" data-scroll-target="#bivariate-categorial-variables"><span class="header-section-number">2.4</span> Bivariate: Categorial Variables</a>
+  <li><a href="#continuous-features" id="toc-continuous-features" class="nav-link" data-scroll-target="#continuous-features"><span class="header-section-number">2.3</span> Continuous Features</a>
   <ul class="collapse">
-  <li><a href="#what-did-you-observe-1" id="toc-what-did-you-observe-1" class="nav-link" data-scroll-target="#what-did-you-observe-1"><span class="header-section-number">2.4.1</span> What did you observe?</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">2.3.1</span> Histogram</a></li>
   </ul></li>
-  <li><a href="#bivariate-continuous-variables" id="toc-bivariate-continuous-variables" class="nav-link" data-scroll-target="#bivariate-continuous-variables"><span class="header-section-number">2.5</span> Bivariate: Continuous Variables</a>
+  <li><a href="#relationship-analysis" id="toc-relationship-analysis" class="nav-link" data-scroll-target="#relationship-analysis"><span class="header-section-number">2.4</span> Relationship Analysis</a>
   <ul class="collapse">
-  <li><a href="#try-to-match-it-on-a-scatterplot" id="toc-try-to-match-it-on-a-scatterplot" class="nav-link" data-scroll-target="#try-to-match-it-on-a-scatterplot"><span class="header-section-number">2.5.1</span> Try to match it on a scatterplot!</a></li>
+  <li><a href="#between-categorical-variable" id="toc-between-categorical-variable" class="nav-link" data-scroll-target="#between-categorical-variable"><span class="header-section-number">2.4.1</span> Between Categorical Variable</a></li>
+  <li><a href="#between-continuous-variables" id="toc-between-continuous-variables" class="nav-link" data-scroll-target="#between-continuous-variables"><span class="header-section-number">2.4.2</span> Between Continuous Variables</a></li>
   </ul></li>
+  <li><a href="#relationship-by-target-variable" id="toc-relationship-by-target-variable" class="nav-link" data-scroll-target="#relationship-by-target-variable"><span class="header-section-number">2.5</span> Relationship by target variable</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -326,13 +328,30 @@ $$
 </header>
 
 
-<section id="visualization" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="visualization"><span class="header-section-number">2.1</span> Visualization</h2>
-<p><span style="color:red;">Fill description</span>.</p>
+<section id="exploratory-data-analysis" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">2.1</span> Exploratory Data Analysis</h2>
+<p>Exploratory Data Analysis (EDA) is the process of analyzing data sets to summarize their main characteristics, often using visual methods.</p>
+<p>It’s a critical step in the data analysis workflow, providing insights into the structure, patterns, and relationships within the data.</p>
+<p>In short, EDA is important for the following reason:</p>
+<ul>
+<li>EDA helps you to <strong>understand the nuances in your data</strong></li>
+<li>EDA helps <strong>ensure the quality and reliability of your data</strong></li>
+<li>EDA is the <strong>foundation</strong> for complex analyses as it helps with features selection, hypothesis generation, and determining the research direction.</li>
+</ul>
 </section>
-<section id="univariate-categorial-variables" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="univariate-categorial-variables"><span class="header-section-number">2.2</span> Univariate: Categorial Variables</h2>
-<p><span style="color:red;">Fill description</span>.</p>
+<section id="categorial-features" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="categorial-features"><span class="header-section-number">2.2</span> Categorial Features</h2>
+<p>Features that can only take in a specific set of values, often counted in whole number. For example,</p>
+<ul>
+<li>Coin flips: 0 or 1</li>
+<li>Days of the Week: Monday, Tuesday, Wednesday etc</li>
+<li>Class Grades: Students can receive specific grades like A, B, C, D, or F.</li>
+</ul>
+<p>To visualize categorical variables, we normally use <strong>bar plot</strong>.</p>
+<section id="bar-plot" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="bar-plot"><span class="header-section-number">2.2.1</span> Bar Plot</h3>
+<p>A bar plot is a chart that uses bars to represent the frequency or count of different categories of a discrete variable.</p>
+<p>Bar plots are ideal for discrete variables because they clearly show the count or frequency of each category, making it easy to compare them.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -341,9 +360,9 @@ $$
 <div class="callout-body-container">
 <p>Select a categorical column to visualize:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="21" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 20;"><span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"cleaned_dataset.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>cat_columns <span class="op">=</span> [<span class="st">'patient_cohort'</span><span class="op">,</span> <span class="st">'diagnosis'</span><span class="op">,</span> <span class="st">'sex'</span>]</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>viewof selected_column_cat <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(cat_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> cat_columns[<span class="dv">0</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="42" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"cleaned_dataset.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>cat_columns <span class="op">=</span> [<span class="st">'patient_cohort'</span><span class="op">,</span> <span class="st">'diagnosis'</span><span class="op">,</span> <span class="st">'sex'</span>]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>viewof selected_column_cat <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(cat_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> cat_columns[<span class="dv">0</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -370,23 +389,23 @@ $$
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="29" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 28;"><span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> d3<span class="op">.</span><span class="fu">groups</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d[selected_column_cat])<span class="op">.</span><span class="fu">map</span>(([key<span class="op">,</span> values]) <span class="kw">=&gt;</span> ({key<span class="op">,</span> <span class="dt">count</span><span class="op">:</span> values<span class="op">.</span><span class="at">length</span>}))<span class="op">;</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(grouped_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"key"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(grouped_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"key"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">count</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> selected_column_cat</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Count"</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="50" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 49;"><span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>grouped_data <span class="op">=</span> d3<span class="op">.</span><span class="fu">groups</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d[selected_column_cat])<span class="op">.</span><span class="fu">map</span>(([key<span class="op">,</span> values]) <span class="kw">=&gt;</span> ({key<span class="op">,</span> <span class="dt">count</span><span class="op">:</span> values<span class="op">.</span><span class="at">length</span>}))<span class="op">;</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(grouped_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"key"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(grouped_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"key"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">count</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span>})</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> selected_column_cat</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Count"</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -402,8 +421,9 @@ $$
 </div>
 </div>
 </div>
-<section id="what-did-you-observe" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="what-did-you-observe"><span class="header-section-number">2.2.1</span> What did you observe?</h3>
+</section>
+<section id="what-did-you-observe" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="what-did-you-observe"><span class="header-section-number">2.2.2</span> What did you observe?</h3>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -416,7 +436,8 @@ What did you observe about patient cohort and sex?
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We see that they are approximately equal amount of female and males, and even though cohort 1 has more patients than cohort 2, there are approximately similar!</p>
+<p>Will be updated after section.</p>
+<!-- We see that they are approximately equal amount of female and males, and even though cohort 1 has more patients than cohort 2, there are approximately similar! -->
 </div>
 </div>
 </div>
@@ -432,17 +453,47 @@ What did you observe about diagnosis (target variable)?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We see that around 400 patients who does not have cancers, while only approximately 180 patients have cancers! That implies only approximately 30% of our data is pancreatic cancer patients!</p>
-<p><strong>Brain teaser: What impact it might have? </strong></p>
+<p>Will be released after section.</p>
+<!--We see that around 400 patients who does not have cancers, while only approximately 180 patients have cancers! That implies only approximately 30% of our data is pancreatic cancer patients!
+ 
+ **Brain teaser: What impact it might have? **
+ 
+*Hint: Think about evalaution metrics, and whether it is enough information to train a classifiers!* -->
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What did you observe about diagnosis (target variable)?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><em>Hint: Think about evalaution metrics, and whether it is enough information to train a classifiers!</em></p>
+<p>Will be released after section.</p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="univariate-continuous-variables" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="univariate-continuous-variables"><span class="header-section-number">2.3</span> Univariate: Continuous Variables</h2>
-<p><span style="color:red;">Fill description</span>.</p>
+<section id="continuous-features" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="continuous-features"><span class="header-section-number">2.3</span> Continuous Features</h2>
+<p>Continuous variables are features that can take any value within a given range, often measured and including fractions or decimals. For example,</p>
+<ul>
+<li>Height: A person’s height can be any value within a range (e.g., 150.5 cm, 170.2 cm).</li>
+<li>Temperature: Temperature can vary continuously (e.g., 22.3°C, 35.6°C).</li>
+<li>Weight: Weight can take on any value within a range (e.g., 55.5 kg, 72.8 kg).</li>
+</ul>
+<p>We uses <strong>histogram</strong> to visualize the continuous variables.</p>
+<section id="histogram" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">2.3.1</span> Histogram</h3>
+<p>A histogram is a chart that uses bars to represent the distribution of a continuous variable, showing the frequency of data within certain ranges or bins.</p>
+<p>Histogram makes it easier to identify patterns, such as skewness, central tendency, and the presence of outliers.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -451,9 +502,9 @@ What did you observe about diagnosis (target variable)?
 <div class="callout-body-container">
 <p>Select a continuous column to visualize:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="79" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 78;"><span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>cont_columns <span class="op">=</span> [<span class="st">'age'</span><span class="op">,</span> <span class="st">'LYVE1'</span><span class="op">,</span> <span class="st">'REG1B'</span><span class="op">,</span> <span class="st">'TFF1'</span><span class="op">,</span> <span class="st">'REG1A'</span><span class="op">,</span> <span class="st">'creatinine'</span><span class="op">,</span> <span class="st">'plasma_CA19_9'</span>]</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>viewof selected_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'LYVE1'</span>})</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>viewof bin_count <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Bins"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="128" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 127;"><span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>cont_columns <span class="op">=</span> [<span class="st">'age'</span><span class="op">,</span> <span class="st">'LYVE1'</span><span class="op">,</span> <span class="st">'REG1B'</span><span class="op">,</span> <span class="st">'TFF1'</span><span class="op">,</span> <span class="st">'REG1A'</span><span class="op">,</span> <span class="st">'creatinine'</span><span class="op">,</span> <span class="st">'plasma_CA19_9'</span>]</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>viewof selected_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'LYVE1'</span>})</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>viewof bin_count <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">50</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Bins"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-3-1" data-nodetype="declaration">
@@ -480,31 +531,65 @@ What did you observe about diagnosis (target variable)?
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="87" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 86;"><span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> selected_column<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> bin_count}))</span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> selected_column</span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Count"</span></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="136" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 135;"><span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">rectY</span>(data<span class="op">,</span> Plot<span class="op">.</span><span class="fu">binX</span>({<span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span>}<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> selected_column<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span><span class="op">,</span> <span class="dt">thresholds</span><span class="op">:</span> bin_count}))</span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> selected_column</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Count"</span></span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-<p><span style="color:red;">Fill thoughts</span>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What happened when you increase/decrease the number of bins?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Will be released after section.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What did you observe about distribution of the features?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>Hint: Look Out for extreme values and think about how it might impact!</em></p>
+<p>Will be released after section.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="bivariate-categorial-variables" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="bivariate-categorial-variables"><span class="header-section-number">2.4</span> Bivariate: Categorial Variables</h2>
-<p><span style="color:red;">Fill description</span>.</p>
+</section>
+<section id="relationship-analysis" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="relationship-analysis"><span class="header-section-number">2.4</span> Relationship Analysis</h2>
+<section id="between-categorical-variable" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="between-categorical-variable"><span class="header-section-number">2.4.1</span> Between Categorical Variable</h3>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -513,8 +598,8 @@ What did you observe about diagnosis (target variable)?
 <div class="callout-body-container">
 <p>Select a column to compare against diagnosis:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="113" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 112;"><span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>bivariate_cat_columns <span class="op">=</span> [<span class="st">'sex'</span><span class="op">,</span> <span class="st">'patient_cohort'</span>]</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>viewof selected_bivariate_cat_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cat_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> bivariate_cat_columns[<span class="dv">0</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="179" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 178;"><span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a>bivariate_cat_columns <span class="op">=</span> [<span class="st">'sex'</span><span class="op">,</span> <span class="st">'patient_cohort'</span>]</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>viewof selected_bivariate_cat_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cat_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> bivariate_cat_columns[<span class="dv">0</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -534,50 +619,50 @@ What did you observe about diagnosis (target variable)?
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="119" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 118;"><span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculateGroupedPercentages</span>(data<span class="op">,</span> groupColumn<span class="op">,</span> stackColumn) {</span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> grouped <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollup</span>(data<span class="op">,</span> v <span class="kw">=&gt;</span> v<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[groupColumn]<span class="op">,</span> d <span class="kw">=&gt;</span> d[stackColumn])<span class="op">;</span></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> totals <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollup</span>(data<span class="op">,</span> v <span class="kw">=&gt;</span> v<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[groupColumn])<span class="op">;</span></span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(grouped<span class="op">,</span> ([key<span class="op">,</span> values]) <span class="kw">=&gt;</span> {</span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> total <span class="op">=</span> totals<span class="op">.</span><span class="fu">get</span>(key)<span class="op">;</span></span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(values<span class="op">,</span> ([stackKey<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({</span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">group</span><span class="op">:</span> key<span class="op">,</span></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stack</span><span class="op">:</span> stackKey<span class="op">,</span></span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>      count<span class="op">,</span></span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>      <span class="dt">percentage</span><span class="op">:</span> (count <span class="op">/</span> total) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">;</span></span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">flat</span>()<span class="op">;</span></span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>grouped_bivariate_data <span class="op">=</span> <span class="fu">calculateGroupedPercentages</span>(data<span class="op">,</span> <span class="st">"diagnosis"</span><span class="op">,</span> selected_bivariate_cat_column)<span class="op">;</span></span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(grouped_bivariate_data<span class="op">,</span> {</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span><span class="op">,</span></span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"percentage"</span><span class="op">,</span></span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"stack"</span><span class="op">,</span></span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">stack</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">percentage</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%`</span></span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(grouped_bivariate_data<span class="op">,</span> {</span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span><span class="op">,</span></span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">percentage</span><span class="op">,</span></span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">percentage</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%`</span><span class="op">,</span></span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>      <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Diagnosis"</span><span class="op">,</span></span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(<span class="kw">new</span> <span class="bu">Set</span>(grouped_bivariate_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span>)))<span class="op">,</span></span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">split</span>(<span class="st">":"</span>)[<span class="dv">0</span>] <span class="co">// Format ticks to show only the group</span></span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Percentage"</span></span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="185" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 184;"><span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculateGroupedPercentages</span>(data<span class="op">,</span> groupColumn<span class="op">,</span> stackColumn) {</span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> grouped <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollup</span>(data<span class="op">,</span> v <span class="kw">=&gt;</span> v<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[groupColumn]<span class="op">,</span> d <span class="kw">=&gt;</span> d[stackColumn])<span class="op">;</span></span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> totals <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollup</span>(data<span class="op">,</span> v <span class="kw">=&gt;</span> v<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[groupColumn])<span class="op">;</span></span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(grouped<span class="op">,</span> ([key<span class="op">,</span> values]) <span class="kw">=&gt;</span> {</span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> total <span class="op">=</span> totals<span class="op">.</span><span class="fu">get</span>(key)<span class="op">;</span></span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(values<span class="op">,</span> ([stackKey<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({</span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a>      <span class="dt">group</span><span class="op">:</span> key<span class="op">,</span></span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stack</span><span class="op">:</span> stackKey<span class="op">,</span></span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a>      count<span class="op">,</span></span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a>      <span class="dt">percentage</span><span class="op">:</span> (count <span class="op">/</span> total) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a>    }))<span class="op">;</span></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">flat</span>()<span class="op">;</span></span>
+<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a>grouped_bivariate_data <span class="op">=</span> <span class="fu">calculateGroupedPercentages</span>(data<span class="op">,</span> <span class="st">"diagnosis"</span><span class="op">,</span> selected_bivariate_cat_column)<span class="op">;</span></span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(grouped_bivariate_data<span class="op">,</span> {</span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span><span class="op">,</span></span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"percentage"</span><span class="op">,</span></span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"stack"</span><span class="op">,</span></span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">stack</span><span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">percentage</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%`</span></span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(grouped_bivariate_data<span class="op">,</span> {</span>
+<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span><span class="op">,</span></span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">percentage</span><span class="op">,</span></span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">percentage</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">1</span>)<span class="sc">}</span><span class="vs">%`</span><span class="op">,</span></span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a>      <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Diagnosis"</span><span class="op">,</span></span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(<span class="kw">new</span> <span class="bu">Set</span>(grouped_bivariate_data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">group</span> <span class="op">+</span> <span class="st">":"</span> <span class="op">+</span> d<span class="op">.</span><span class="at">stack</span>)))<span class="op">,</span></span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">split</span>(<span class="st">":"</span>)[<span class="dv">0</span>] <span class="co">// Format ticks to show only the group</span></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Percentage"</span></span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="declaration">
@@ -600,24 +685,56 @@ What did you observe about diagnosis (target variable)?
 </div>
 </div>
 </div>
-<section id="what-did-you-observe-1" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="what-did-you-observe-1"><span class="header-section-number">2.4.1</span> What did you observe?</h3>
-<p><span style="color:red;">Fill thoughts</span>.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What did you observe (especially for patient cohort!)?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Will be released after section.</p>
+</div>
+</div>
+</div>
 </section>
+<section id="between-continuous-variables" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="between-continuous-variables"><span class="header-section-number">2.4.2</span> Between Continuous Variables</h3>
+<section id="scatterplot" class="level4" data-number="2.4.2.1">
+<h4 data-number="2.4.2.1" class="anchored" data-anchor-id="scatterplot"><span class="header-section-number">2.4.2.1</span> Scatterplot</h4>
+<p>A <strong>scatterplot</strong> is a type of data visualization that displays individual data points on a two-dimensional graph.</p>
+<ul>
+<li>Each point on the scatterplot represents an observation from a dataset, with its position determined by two variables—one plotted on the x-axis and the other on the y-axis.</li>
+<li>Scatterplots are commonly used to explore the relationship between two continuous variables to reveal patterns, trends, correlations, or clusters within the data.</li>
+</ul>
 </section>
-<section id="bivariate-continuous-variables" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="bivariate-continuous-variables"><span class="header-section-number">2.5</span> Bivariate: Continuous Variables</h2>
-<p><span style="color:red;">Fill description about heatmap</span>.</p>
+<section id="linear-regression" class="level4" data-number="2.4.2.2">
+<h4 data-number="2.4.2.2" class="anchored" data-anchor-id="linear-regression"><span class="header-section-number">2.4.2.2</span> Linear Regression</h4>
+<p><strong>Linear regression</strong> is a statistical method used to model and analyze the relationship between two variables by fitting a linear equation to the observed data.</p>
+<ul>
+<li><p>The linear equation is typically of the form: <span class="math inline">\(y = mx + c\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(y\)</span> is the dependent variable (the outcome we are trying to predict or explain),</li>
+<li><span class="math inline">\(x\)</span> is the independent variable (the predictor or input variable),</li>
+<li><span class="math inline">\(m\)</span> is the slope of the line (indicating the change in <span class="math inline">\(y\)</span> for a unit change in <span class="math inline">\(x\)</span>).</li>
+<li><span class="math inline">\(c\)</span> is the y-intercept (the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is 0).</li>
+</ul></li>
+</ul>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Select Continuous Variables for Correlation Heatmap:</p>
+<p>Select a X-Axis and Y-Axis Column:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="180" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 179;"><span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>bivariate_cont_columns <span class="op">=</span> [<span class="st">'age'</span><span class="op">,</span> <span class="st">'LYVE1'</span><span class="op">,</span> <span class="st">'REG1B'</span><span class="op">,</span> <span class="st">'TFF1'</span><span class="op">,</span> <span class="st">'REG1A'</span><span class="op">,</span> <span class="st">'creatinine'</span><span class="op">,</span> <span class="st">'plasma_CA19_9'</span>]</span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>viewof selected_bivariate_cont_columns <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> bivariate_cont_columns})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="267" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 266;"><span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>bivariate_cont_columns <span class="op">=</span> [<span class="st">'age'</span><span class="op">,</span> <span class="st">'LYVE1'</span><span class="op">,</span> <span class="st">'REG1B'</span><span class="op">,</span> <span class="st">'TFF1'</span><span class="op">,</span> <span class="st">'REG1A'</span><span class="op">,</span> <span class="st">'creatinine'</span><span class="op">,</span> <span class="st">'plasma_CA19_9'</span>]</span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a>viewof x_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'age'</span>})</span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a>viewof y_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'LYVE1'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-7-1" data-nodetype="declaration">
@@ -632,100 +749,191 @@ What did you observe about diagnosis (target variable)?
 </div>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-7-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="187" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 186;"><span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculateCorrelationMatrix</span>(data<span class="op">,</span> selectedColumns) {</span>
-<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> n <span class="op">=</span> selectedColumns<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
-<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> correlationMatrix <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> n }<span class="op">,</span> () <span class="kw">=&gt;</span> <span class="bu">Array</span>(n)<span class="op">.</span><span class="fu">fill</span>(<span class="dv">0</span>))<span class="op">;</span></span>
-<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">pearsonCorrelation</span>(x<span class="op">,</span> y) {</span>
-<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> meanX <span class="op">=</span> d3<span class="op">.</span><span class="fu">mean</span>(x)<span class="op">;</span></span>
-<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> meanY <span class="op">=</span> d3<span class="op">.</span><span class="fu">mean</span>(y)<span class="op">;</span></span>
-<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffX <span class="op">=</span> x<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">-</span> meanX)<span class="op">;</span></span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffY <span class="op">=</span> y<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">-</span> meanY)<span class="op">;</span></span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> numerator <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(diffX<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> d <span class="op">*</span> diffY[i]))<span class="op">;</span></span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> denominator <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(d3<span class="op">.</span><span class="fu">sum</span>(diffX<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">*</span> d)) <span class="op">*</span> d3<span class="op">.</span><span class="fu">sum</span>(diffY<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">*</span> d)))<span class="op">;</span></span>
-<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator <span class="op">/</span> denominator<span class="op">;</span></span>
-<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> j<span class="op">++</span>) {</span>
-<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> col1 <span class="op">=</span> selectedColumns[i]<span class="op">;</span></span>
-<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> col2 <span class="op">=</span> selectedColumns[j]<span class="op">;</span></span>
-<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> values1 <span class="op">=</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d[col1])<span class="op">;</span></span>
-<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> values2 <span class="op">=</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d[col2])<span class="op">;</span></span>
-<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> correlation <span class="op">=</span> <span class="fu">pearsonCorrelation</span>(values1<span class="op">,</span> values2)<span class="op">;</span></span>
-<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a>      correlationMatrix[i][j] <span class="op">=</span> correlation<span class="op">;</span></span>
-<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> correlationMatrix<span class="op">;</span></span>
-<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> <span class="fu">calculateCorrelationMatrix</span>(data<span class="op">,</span> selected_bivariate_cont_columns)<span class="op">;</span></span>
-<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a>correlation_data <span class="op">=</span> selected_bivariate_cont_columns<span class="op">.</span><span class="fu">flatMap</span>((col1<span class="op">,</span> i) <span class="kw">=&gt;</span></span>
-<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a>  selected_bivariate_cont_columns<span class="op">.</span><span class="fu">map</span>((col2<span class="op">,</span> j) <span class="kw">=&gt;</span> ({</span>
-<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> col1<span class="op">,</span></span>
-<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> col2<span class="op">,</span></span>
-<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> correlation_matrix[i][j]</span>
-<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a>  }))</span>
-<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
-<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">cell</span>(correlation_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">value</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)})<span class="op">,</span></span>
-<span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(correlation_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">value</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"middle"</span>})</span>
-<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> selected_bivariate_cont_columns<span class="op">,</span></span>
-<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Variables"</span></span>
-<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> selected_bivariate_cont_columns<span class="op">,</span></span>
-<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Variables"</span></span>
-<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">"linear"</span><span class="op">,</span></span>
-<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scheme</span><span class="op">:</span> <span class="st">"blues"</span><span class="op">,</span></span>
-<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Correlation"</span></span>
-<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span></span>
-<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">600</span></span>
-<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="273" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 272;"><span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> x_column<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y_column<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})<span class="op">,</span></span>
+<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">linearRegressionY</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> x_column<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y_column<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span>})</span>
+<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> x_column</span>
+<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> y_column</span>
+<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb8-285"><a href="#cb8-285" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb8-286"><a href="#cb8-286" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-287"><a href="#cb8-287" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-8" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+<section id="correlation" class="level4" data-number="2.4.2.3">
+<h4 data-number="2.4.2.3" class="anchored" data-anchor-id="correlation"><span class="header-section-number">2.4.2.3</span> Correlation</h4>
+<p><strong>Correlation</strong> measures how two things are related to each other, like how one changes when the other does.</p>
+<ul>
+<li><strong>Positive correlation</strong> means as one thing increases, the other also increases (e.g., more study time, better grades).</li>
+<li><strong>Negative correlation</strong> means as one thing increases, the other decreases (e.g., more exercise, lower stress).</li>
+</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Select Continuous Variables for Correlation Heatmap:</p>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="302" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 301;"><span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>viewof selected_bivariate_cont_columns <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> bivariate_cont_columns})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="310" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 309;"><span id="cb10-310"><a href="#cb10-310" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">calculateCorrelationMatrix</span>(data<span class="op">,</span> selectedColumns) {</span>
+<span id="cb10-311"><a href="#cb10-311" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> n <span class="op">=</span> selectedColumns<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
+<span id="cb10-312"><a href="#cb10-312" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> correlationMatrix <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> n }<span class="op">,</span> () <span class="kw">=&gt;</span> <span class="bu">Array</span>(n)<span class="op">.</span><span class="fu">fill</span>(<span class="dv">0</span>))<span class="op">;</span></span>
+<span id="cb10-313"><a href="#cb10-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-314"><a href="#cb10-314" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">pearsonCorrelation</span>(x<span class="op">,</span> y) {</span>
+<span id="cb10-315"><a href="#cb10-315" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> meanX <span class="op">=</span> d3<span class="op">.</span><span class="fu">mean</span>(x)<span class="op">;</span></span>
+<span id="cb10-316"><a href="#cb10-316" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> meanY <span class="op">=</span> d3<span class="op">.</span><span class="fu">mean</span>(y)<span class="op">;</span></span>
+<span id="cb10-317"><a href="#cb10-317" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffX <span class="op">=</span> x<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">-</span> meanX)<span class="op">;</span></span>
+<span id="cb10-318"><a href="#cb10-318" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffY <span class="op">=</span> y<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">-</span> meanY)<span class="op">;</span></span>
+<span id="cb10-319"><a href="#cb10-319" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> numerator <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(diffX<span class="op">.</span><span class="fu">map</span>((d<span class="op">,</span> i) <span class="kw">=&gt;</span> d <span class="op">*</span> diffY[i]))<span class="op">;</span></span>
+<span id="cb10-320"><a href="#cb10-320" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> denominator <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(d3<span class="op">.</span><span class="fu">sum</span>(diffX<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">*</span> d)) <span class="op">*</span> d3<span class="op">.</span><span class="fu">sum</span>(diffY<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d <span class="op">*</span> d)))<span class="op">;</span></span>
+<span id="cb10-321"><a href="#cb10-321" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> numerator <span class="op">/</span> denominator<span class="op">;</span></span>
+<span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> j<span class="op">++</span>) {</span>
+<span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> col1 <span class="op">=</span> selectedColumns[i]<span class="op">;</span></span>
+<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> col2 <span class="op">=</span> selectedColumns[j]<span class="op">;</span></span>
+<span id="cb10-328"><a href="#cb10-328" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> values1 <span class="op">=</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d[col1])<span class="op">;</span></span>
+<span id="cb10-329"><a href="#cb10-329" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> values2 <span class="op">=</span> data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d[col2])<span class="op">;</span></span>
+<span id="cb10-330"><a href="#cb10-330" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> correlation <span class="op">=</span> <span class="fu">pearsonCorrelation</span>(values1<span class="op">,</span> values2)<span class="op">;</span></span>
+<span id="cb10-331"><a href="#cb10-331" aria-hidden="true" tabindex="-1"></a>      correlationMatrix[i][j] <span class="op">=</span> correlation<span class="op">;</span></span>
+<span id="cb10-332"><a href="#cb10-332" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-333"><a href="#cb10-333" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-334"><a href="#cb10-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-335"><a href="#cb10-335" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> correlationMatrix<span class="op">;</span></span>
+<span id="cb10-336"><a href="#cb10-336" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-337"><a href="#cb10-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-338"><a href="#cb10-338" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> <span class="fu">calculateCorrelationMatrix</span>(data<span class="op">,</span> selected_bivariate_cont_columns)<span class="op">;</span></span>
+<span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a>correlation_data <span class="op">=</span> selected_bivariate_cont_columns<span class="op">.</span><span class="fu">flatMap</span>((col1<span class="op">,</span> i) <span class="kw">=&gt;</span></span>
+<span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a>  selected_bivariate_cont_columns<span class="op">.</span><span class="fu">map</span>((col2<span class="op">,</span> j) <span class="kw">=&gt;</span> ({</span>
+<span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> col1<span class="op">,</span></span>
+<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> col2<span class="op">,</span></span>
+<span id="cb10-343"><a href="#cb10-343" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> correlation_matrix[i][j]</span>
+<span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a>  }))</span>
+<span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb10-346"><a href="#cb10-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-347"><a href="#cb10-347" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-348"><a href="#cb10-348" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-349"><a href="#cb10-349" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">cell</span>(correlation_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"value"</span><span class="op">,</span> <span class="dt">title</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">value</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)})<span class="op">,</span></span>
+<span id="cb10-350"><a href="#cb10-350" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(correlation_data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"y"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">value</span><span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"middle"</span>})</span>
+<span id="cb10-351"><a href="#cb10-351" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb10-352"><a href="#cb10-352" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb10-353"><a href="#cb10-353" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> selected_bivariate_cont_columns<span class="op">,</span></span>
+<span id="cb10-354"><a href="#cb10-354" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Variables"</span></span>
+<span id="cb10-355"><a href="#cb10-355" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb10-356"><a href="#cb10-356" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb10-357"><a href="#cb10-357" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> selected_bivariate_cont_columns<span class="op">,</span></span>
+<span id="cb10-358"><a href="#cb10-358" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Variables"</span></span>
+<span id="cb10-359"><a href="#cb10-359" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb10-360"><a href="#cb10-360" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb10-361"><a href="#cb10-361" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">"linear"</span><span class="op">,</span></span>
+<span id="cb10-362"><a href="#cb10-362" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scheme</span><span class="op">:</span> <span class="st">"blues"</span><span class="op">,</span></span>
+<span id="cb10-363"><a href="#cb10-363" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Correlation"</span></span>
+<span id="cb10-364"><a href="#cb10-364" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb10-365"><a href="#cb10-365" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span></span>
+<span id="cb10-366"><a href="#cb10-366" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">600</span></span>
+<span id="cb10-367"><a href="#cb10-367" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-8-1" data-nodetype="declaration">
+<div id="ojs-cell-10-1" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-8-2" data-nodetype="declaration">
+<div id="ojs-cell-10-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-8-3" data-nodetype="declaration">
+<div id="ojs-cell-10-3" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-8-4" data-nodetype="expression">
+<div id="ojs-cell-10-4" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 </div>
-<section id="try-to-match-it-on-a-scatterplot" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="try-to-match-it-on-a-scatterplot"><span class="header-section-number">2.5.1</span> Try to match it on a scatterplot!</h3>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What did you observe about features relationship?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Will be released after section.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Any relationship between the linear regression line and correlation that you observed?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Will be released after section.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="relationship-by-target-variable" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="relationship-by-target-variable"><span class="header-section-number">2.5</span> Relationship by target variable</h2>
+<p>The scatterplot colored by the “diagnosis” variable visually represents the relationship between the selected features and the target outcome. By plotting the data points and coloring them based on the binary diagnosis (e.g., positive or negative), you can quickly see patterns or clusters that indicate how the features are associated with the diagnosis.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -734,60 +942,57 @@ What did you observe about diagnosis (target variable)?
 <div class="callout-body-container">
 <p>Select a X-Axis and Y-Axis Column:</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="256" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 255;"><span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a>viewof x_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'age'</span>})</span>
-<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a>viewof y_column <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'LYVE1'</span>})</span>
-<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> x_column<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y_column<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"steelblue"</span>})</span>
-<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
-<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> x_column</span>
-<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> y_column</span>
-<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span></span>
-<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="398" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 397;"><span id="cb11-398"><a href="#cb11-398" aria-hidden="true" tabindex="-1"></a>viewof x_column_scatt <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'age'</span>})</span>
+<span id="cb11-399"><a href="#cb11-399" aria-hidden="true" tabindex="-1"></a>viewof y_column_scatt <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(bivariate_cont_columns<span class="op">,</span> {<span class="dt">value</span><span class="op">:</span> <span class="st">'LYVE1'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-9-1" data-nodetype="declaration">
+<div id="ojs-cell-11-1" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-9-2" data-nodetype="declaration">
+<div id="ojs-cell-11-2" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="403" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 402;"><span id="cb12-403"><a href="#cb12-403" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb12-404"><a href="#cb12-404" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb12-405"><a href="#cb12-405" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(data<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> x_column_scatt<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> y_column_scatt<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"diagnosis"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.7</span>})</span>
+<span id="cb12-406"><a href="#cb12-406" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb12-407"><a href="#cb12-407" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {</span>
+<span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> x_column_scatt</span>
+<span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb12-410"><a href="#cb12-410" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
+<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> y_column_scatt</span>
+<span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> <span class="co">// Assuming "diagnosis" has binary labels like "positive" and "negative"</span></span>
+<span id="cb12-415"><a href="#cb12-415" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> [<span class="st">"blue"</span><span class="op">,</span> <span class="st">"orange"</span>]<span class="op">,</span> <span class="co">// Use contrasting colors like blue and orange</span></span>
+<span id="cb12-416"><a href="#cb12-416" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span> <span class="co">// Shows a legend for the binary categories</span></span>
+<span id="cb12-417"><a href="#cb12-417" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-418"><a href="#cb12-418" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-9-3" data-nodetype="expression">
+<div id="ojs-cell-12" data-nodetype="expression">
 
 </div>
 </div>
 </div>
-</div>
-<section id="what-did-you-observe-2" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="what-did-you-observe-2"><span class="header-section-number">2.5.2</span> What did you observe?</h3>
-<p><span style="color:red;">Fill thoughts</span>.</p>
 <p><span class="math inline">\(\,\)</span></p>
 
 
 </section>
-</div>
-</div>
-</div>
-</section>
-</section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBGaWxlQXR0YWNobWVudChcImNsZWFuZWRfZGF0YXNldC5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSlcbmNhdF9jb2x1bW5zID0gWydwYXRpZW50X2NvaG9ydCcsICdkaWFnbm9zaXMnLCAnc2V4J11cbnZpZXdvZiBzZWxlY3RlZF9jb2x1bW5fY2F0ID0gSW5wdXRzLnJhZGlvKGNhdF9jb2x1bW5zLCB7dmFsdWU6IGNhdF9jb2x1bW5zWzBdfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imdyb3VwZWRfZGF0YSA9IGQzLmdyb3VwcyhkYXRhLCBkID0+IGRbc2VsZWN0ZWRfY29sdW1uX2NhdF0pLm1hcCgoW2tleSwgdmFsdWVzXSkgPT4gKHtrZXksIGNvdW50OiB2YWx1ZXMubGVuZ3RofSkpO1xuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYmFyWShncm91cGVkX2RhdGEsIHt4OiBcImtleVwiLCB5OiBcImNvdW50XCIsIGZpbGw6IFwic3RlZWxibHVlXCJ9KSxcbiAgICBQbG90LnRleHQoZ3JvdXBlZF9kYXRhLCB7eDogXCJrZXlcIiwgeTogXCJjb3VudFwiLCB0ZXh0OiBkID0+IGQuY291bnQsIGR5OiAtMTB9KVxuICBdLFxuICB4OiB7XG4gICAgbGFiZWw6IHNlbGVjdGVkX2NvbHVtbl9jYXRcbiAgfSxcbiAgeToge1xuICAgIGxhYmVsOiBcIkNvdW50XCJcbiAgfSxcbiAgY29sb3I6IHtcbiAgICBsZWdlbmQ6IGZhbHNlXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJjb250X2NvbHVtbnMgPSBbJ2FnZScsICdMWVZFMScsICdSRUcxQicsICdURkYxJywgJ1JFRzFBJywgJ2NyZWF0aW5pbmUnLCAncGxhc21hX0NBMTlfOSddXG52aWV3b2Ygc2VsZWN0ZWRfY29sdW1uID0gSW5wdXRzLnJhZGlvKGNvbnRfY29sdW1ucywge3ZhbHVlOiAnTFlWRTEnfSlcbnZpZXdvZiBiaW5fY291bnQgPSBJbnB1dHMucmFuZ2UoWzEsIDUwXSwge3N0ZXA6IDEsIHZhbHVlOiAxNSwgbGFiZWw6IFwiTnVtYmVyIG9mIEJpbnNcIn0pXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5yZWN0WShkYXRhLCBQbG90LmJpblgoe3k6IFwiY291bnRcIn0sIHt4OiBzZWxlY3RlZF9jb2x1bW4sIGZpbGw6IFwic3RlZWxibHVlXCIsIHRocmVzaG9sZHM6IGJpbl9jb3VudH0pKVxuICBdLFxuICB4OiB7XG4gICAgbGFiZWw6IHNlbGVjdGVkX2NvbHVtblxuICB9LFxuICB5OiB7XG4gICAgbGFiZWw6IFwiQ291bnRcIlxuICB9LFxuICBjb2xvcjoge1xuICAgIGxlZ2VuZDogZmFsc2VcbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImJpdmFyaWF0ZV9jYXRfY29sdW1ucyA9IFsnc2V4JywgJ3BhdGllbnRfY29ob3J0J11cbnZpZXdvZiBzZWxlY3RlZF9iaXZhcmlhdGVfY2F0X2NvbHVtbiA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY2F0X2NvbHVtbnMsIHt2YWx1ZTogYml2YXJpYXRlX2NhdF9jb2x1bW5zWzBdfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZ1bmN0aW9uIGNhbGN1bGF0ZUdyb3VwZWRQZXJjZW50YWdlcyhkYXRhLCBncm91cENvbHVtbiwgc3RhY2tDb2x1bW4pIHtcbiAgY29uc3QgZ3JvdXBlZCA9IGQzLnJvbGx1cChkYXRhLCB2ID0+IHYubGVuZ3RoLCBkID0+IGRbZ3JvdXBDb2x1bW5dLCBkID0+IGRbc3RhY2tDb2x1bW5dKTtcbiAgY29uc3QgdG90YWxzID0gZDMucm9sbHVwKGRhdGEsIHYgPT4gdi5sZW5ndGgsIGQgPT4gZFtncm91cENvbHVtbl0pO1xuXG4gIHJldHVybiBBcnJheS5mcm9tKGdyb3VwZWQsIChba2V5LCB2YWx1ZXNdKSA9PiB7XG4gICAgY29uc3QgdG90YWwgPSB0b3RhbHMuZ2V0KGtleSk7XG4gICAgcmV0dXJuIEFycmF5LmZyb20odmFsdWVzLCAoW3N0YWNrS2V5LCBjb3VudF0pID0+ICh7XG4gICAgICBncm91cDoga2V5LFxuICAgICAgc3RhY2s6IHN0YWNrS2V5LFxuICAgICAgY291bnQsXG4gICAgICBwZXJjZW50YWdlOiAoY291bnQgLyB0b3RhbCkgKiAxMDBcbiAgICB9KSk7XG4gIH0pLmZsYXQoKTtcbn1cblxuZ3JvdXBlZF9iaXZhcmlhdGVfZGF0YSA9IGNhbGN1bGF0ZUdyb3VwZWRQZXJjZW50YWdlcyhkYXRhLCBcImRpYWdub3Npc1wiLCBzZWxlY3RlZF9iaXZhcmlhdGVfY2F0X2NvbHVtbik7XG5cblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJZKGdyb3VwZWRfYml2YXJpYXRlX2RhdGEsIHtcbiAgICAgIHg6IGQgPT4gZC5ncm91cCArIFwiOlwiICsgZC5zdGFjayxcbiAgICAgIHk6IFwicGVyY2VudGFnZVwiLFxuICAgICAgZmlsbDogXCJzdGFja1wiLFxuICAgICAgdGl0bGU6IGQgPT4gYCR7ZC5zdGFja306ICR7ZC5wZXJjZW50YWdlLnRvRml4ZWQoMSl9JWBcbiAgICB9KSxcbiAgICBQbG90LnRleHQoZ3JvdXBlZF9iaXZhcmlhdGVfZGF0YSwge1xuICAgICAgeDogZCA9PiBkLmdyb3VwICsgXCI6XCIgKyBkLnN0YWNrLFxuICAgICAgeTogZCA9PiBkLnBlcmNlbnRhZ2UsXG4gICAgICB0ZXh0OiBkID0+IGAke2QucGVyY2VudGFnZS50b0ZpeGVkKDEpfSVgLFxuICAgICAgZHk6IC00XG4gICAgfSlcbiAgXSxcbiAgeDoge1xuICAgIGxhYmVsOiBcIkRpYWdub3Npc1wiLFxuICAgIGRvbWFpbjogQXJyYXkuZnJvbShuZXcgU2V0KGdyb3VwZWRfYml2YXJpYXRlX2RhdGEubWFwKGQgPT4gZC5ncm91cCArIFwiOlwiICsgZC5zdGFjaykpKSxcbiAgICB0aWNrRm9ybWF0OiBkID0+IGQuc3BsaXQoXCI6XCIpWzBdIC8vIEZvcm1hdCB0aWNrcyB0byBzaG93IG9ubHkgdGhlIGdyb3VwXG4gIH0sXG4gIHk6IHtcbiAgICBsYWJlbDogXCJQZXJjZW50YWdlXCJcbiAgfSxcbiAgY29sb3I6IHtcbiAgICBsZWdlbmQ6IHRydWVcbiAgfVxufSlcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYml2YXJpYXRlX2NvbnRfY29sdW1ucyA9IFsnYWdlJywgJ0xZVkUxJywgJ1JFRzFCJywgJ1RGRjEnLCAnUkVHMUEnLCAnY3JlYXRpbmluZScsICdwbGFzbWFfQ0ExOV85J11cbnZpZXdvZiBzZWxlY3RlZF9iaXZhcmlhdGVfY29udF9jb2x1bW5zID0gSW5wdXRzLmNoZWNrYm94KGJpdmFyaWF0ZV9jb250X2NvbHVtbnMsIHt2YWx1ZTogYml2YXJpYXRlX2NvbnRfY29sdW1uc30pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJmdW5jdGlvbiBjYWxjdWxhdGVDb3JyZWxhdGlvbk1hdHJpeChkYXRhLCBzZWxlY3RlZENvbHVtbnMpIHtcbiAgY29uc3QgbiA9IHNlbGVjdGVkQ29sdW1ucy5sZW5ndGg7XG4gIGNvbnN0IGNvcnJlbGF0aW9uTWF0cml4ID0gQXJyYXkuZnJvbSh7IGxlbmd0aDogbiB9LCAoKSA9PiBBcnJheShuKS5maWxsKDApKTtcblxuICBmdW5jdGlvbiBwZWFyc29uQ29ycmVsYXRpb24oeCwgeSkge1xuICAgIGNvbnN0IG1lYW5YID0gZDMubWVhbih4KTtcbiAgICBjb25zdCBtZWFuWSA9IGQzLm1lYW4oeSk7XG4gICAgY29uc3QgZGlmZlggPSB4Lm1hcChkID0+IGQgLSBtZWFuWCk7XG4gICAgY29uc3QgZGlmZlkgPSB5Lm1hcChkID0+IGQgLSBtZWFuWSk7XG4gICAgY29uc3QgbnVtZXJhdG9yID0gZDMuc3VtKGRpZmZYLm1hcCgoZCwgaSkgPT4gZCAqIGRpZmZZW2ldKSk7XG4gICAgY29uc3QgZGVub21pbmF0b3IgPSBNYXRoLnNxcnQoZDMuc3VtKGRpZmZYLm1hcChkID0+IGQgKiBkKSkgKiBkMy5zdW0oZGlmZlkubWFwKGQgPT4gZCAqIGQpKSk7XG4gICAgcmV0dXJuIG51bWVyYXRvciAvIGRlbm9taW5hdG9yO1xuICB9XG5cbiAgZm9yIChsZXQgaSA9IDA7IGkgPCBuOyBpKyspIHtcbiAgICBmb3IgKGxldCBqID0gMDsgaiA8IG47IGorKykge1xuICAgICAgY29uc3QgY29sMSA9IHNlbGVjdGVkQ29sdW1uc1tpXTtcbiAgICAgIGNvbnN0IGNvbDIgPSBzZWxlY3RlZENvbHVtbnNbal07XG4gICAgICBjb25zdCB2YWx1ZXMxID0gZGF0YS5tYXAoZCA9PiBkW2NvbDFdKTtcbiAgICAgIGNvbnN0IHZhbHVlczIgPSBkYXRhLm1hcChkID0+IGRbY29sMl0pO1xuICAgICAgY29uc3QgY29ycmVsYXRpb24gPSBwZWFyc29uQ29ycmVsYXRpb24odmFsdWVzMSwgdmFsdWVzMik7XG4gICAgICBjb3JyZWxhdGlvbk1hdHJpeFtpXVtqXSA9IGNvcnJlbGF0aW9uO1xuICAgIH1cbiAgfVxuXG4gIHJldHVybiBjb3JyZWxhdGlvbk1hdHJpeDtcbn1cblxuY29ycmVsYXRpb25fbWF0cml4ID0gY2FsY3VsYXRlQ29ycmVsYXRpb25NYXRyaXgoZGF0YSwgc2VsZWN0ZWRfYml2YXJpYXRlX2NvbnRfY29sdW1ucyk7XG5jb3JyZWxhdGlvbl9kYXRhID0gc2VsZWN0ZWRfYml2YXJpYXRlX2NvbnRfY29sdW1ucy5mbGF0TWFwKChjb2wxLCBpKSA9PlxuICBzZWxlY3RlZF9iaXZhcmlhdGVfY29udF9jb2x1bW5zLm1hcCgoY29sMiwgaikgPT4gKHtcbiAgICB4OiBjb2wxLFxuICAgIHk6IGNvbDIsXG4gICAgdmFsdWU6IGNvcnJlbGF0aW9uX21hdHJpeFtpXVtqXVxuICB9KSlcbik7XG5cblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5jZWxsKGNvcnJlbGF0aW9uX2RhdGEsIHt4OiBcInhcIiwgeTogXCJ5XCIsIGZpbGw6IFwidmFsdWVcIiwgdGl0bGU6IGQgPT4gZC52YWx1ZS50b0ZpeGVkKDIpfSksXG4gICAgUGxvdC50ZXh0KGNvcnJlbGF0aW9uX2RhdGEsIHt4OiBcInhcIiwgeTogXCJ5XCIsIHRleHQ6IGQgPT4gZC52YWx1ZS50b0ZpeGVkKDIpLCBkeTogMCwgdGV4dEFuY2hvcjogXCJtaWRkbGVcIn0pXG4gIF0sXG4gIHg6IHtcbiAgICBkb21haW46IHNlbGVjdGVkX2JpdmFyaWF0ZV9jb250X2NvbHVtbnMsXG4gICAgbGFiZWw6IFwiVmFyaWFibGVzXCJcbiAgfSxcbiAgeToge1xuICAgIGRvbWFpbjogc2VsZWN0ZWRfYml2YXJpYXRlX2NvbnRfY29sdW1ucyxcbiAgICBsYWJlbDogXCJWYXJpYWJsZXNcIlxuICB9LFxuICBjb2xvcjoge1xuICAgIHR5cGU6IFwibGluZWFyXCIsXG4gICAgc2NoZW1lOiBcImJsdWVzXCIsXG4gICAgbGFiZWw6IFwiQ29ycmVsYXRpb25cIlxuICB9LFxuICB3aWR0aDogNjAwLFxuICBoZWlnaHQ6IDYwMFxufSlcblxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgeF9jb2x1bW4gPSBJbnB1dHMucmFkaW8oYml2YXJpYXRlX2NvbnRfY29sdW1ucywge3ZhbHVlOiAnYWdlJ30pXG52aWV3b2YgeV9jb2x1bW4gPSBJbnB1dHMucmFkaW8oYml2YXJpYXRlX2NvbnRfY29sdW1ucywge3ZhbHVlOiAnTFlWRTEnfSlcblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5kb3QoZGF0YSwge3g6IHhfY29sdW1uLCB5OiB5X2NvbHVtbiwgZmlsbDogXCJzdGVlbGJsdWVcIn0pXG4gIF0sXG4gIHg6IHtcbiAgICBsYWJlbDogeF9jb2x1bW5cbiAgfSxcbiAgeToge1xuICAgIGxhYmVsOiB5X2NvbHVtblxuICB9LFxuICBjb2xvcjoge1xuICAgIGxlZ2VuZDogZmFsc2VcbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2VsZWN0ZWRfY29sdW1uX2NhdCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZF9jb2x1bW4nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnYmluX2NvdW50JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkX2JpdmFyaWF0ZV9jYXRfY29sdW1uJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkX2JpdmFyaWF0ZV9jb250X2NvbHVtbnMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgneF9jb2x1bW4nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgneV9jb2x1bW4nKSJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBGaWxlQXR0YWNobWVudChcImNsZWFuZWRfZGF0YXNldC5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSlcbmNhdF9jb2x1bW5zID0gWydwYXRpZW50X2NvaG9ydCcsICdkaWFnbm9zaXMnLCAnc2V4J11cbnZpZXdvZiBzZWxlY3RlZF9jb2x1bW5fY2F0ID0gSW5wdXRzLnJhZGlvKGNhdF9jb2x1bW5zLCB7dmFsdWU6IGNhdF9jb2x1bW5zWzBdfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imdyb3VwZWRfZGF0YSA9IGQzLmdyb3VwcyhkYXRhLCBkID0+IGRbc2VsZWN0ZWRfY29sdW1uX2NhdF0pLm1hcCgoW2tleSwgdmFsdWVzXSkgPT4gKHtrZXksIGNvdW50OiB2YWx1ZXMubGVuZ3RofSkpO1xuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYmFyWShncm91cGVkX2RhdGEsIHt4OiBcImtleVwiLCB5OiBcImNvdW50XCIsIGZpbGw6IFwic3RlZWxibHVlXCJ9KSxcbiAgICBQbG90LnRleHQoZ3JvdXBlZF9kYXRhLCB7eDogXCJrZXlcIiwgeTogXCJjb3VudFwiLCB0ZXh0OiBkID0+IGQuY291bnQsIGR5OiAtMTB9KVxuICBdLFxuICB4OiB7XG4gICAgbGFiZWw6IHNlbGVjdGVkX2NvbHVtbl9jYXRcbiAgfSxcbiAgeToge1xuICAgIGxhYmVsOiBcIkNvdW50XCJcbiAgfSxcbiAgY29sb3I6IHtcbiAgICBsZWdlbmQ6IGZhbHNlXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJjb250X2NvbHVtbnMgPSBbJ2FnZScsICdMWVZFMScsICdSRUcxQicsICdURkYxJywgJ1JFRzFBJywgJ2NyZWF0aW5pbmUnLCAncGxhc21hX0NBMTlfOSddXG52aWV3b2Ygc2VsZWN0ZWRfY29sdW1uID0gSW5wdXRzLnJhZGlvKGNvbnRfY29sdW1ucywge3ZhbHVlOiAnTFlWRTEnfSlcbnZpZXdvZiBiaW5fY291bnQgPSBJbnB1dHMucmFuZ2UoWzEsIDUwXSwge3N0ZXA6IDEsIHZhbHVlOiAxNSwgbGFiZWw6IFwiTnVtYmVyIG9mIEJpbnNcIn0pXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5yZWN0WShkYXRhLCBQbG90LmJpblgoe3k6IFwiY291bnRcIn0sIHt4OiBzZWxlY3RlZF9jb2x1bW4sIGZpbGw6IFwic3RlZWxibHVlXCIsIHRocmVzaG9sZHM6IGJpbl9jb3VudH0pKVxuICBdLFxuICB4OiB7XG4gICAgbGFiZWw6IHNlbGVjdGVkX2NvbHVtblxuICB9LFxuICB5OiB7XG4gICAgbGFiZWw6IFwiQ291bnRcIlxuICB9LFxuICBjb2xvcjoge1xuICAgIGxlZ2VuZDogZmFsc2VcbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImJpdmFyaWF0ZV9jYXRfY29sdW1ucyA9IFsnc2V4JywgJ3BhdGllbnRfY29ob3J0J11cbnZpZXdvZiBzZWxlY3RlZF9iaXZhcmlhdGVfY2F0X2NvbHVtbiA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY2F0X2NvbHVtbnMsIHt2YWx1ZTogYml2YXJpYXRlX2NhdF9jb2x1bW5zWzBdfSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZ1bmN0aW9uIGNhbGN1bGF0ZUdyb3VwZWRQZXJjZW50YWdlcyhkYXRhLCBncm91cENvbHVtbiwgc3RhY2tDb2x1bW4pIHtcbiAgY29uc3QgZ3JvdXBlZCA9IGQzLnJvbGx1cChkYXRhLCB2ID0+IHYubGVuZ3RoLCBkID0+IGRbZ3JvdXBDb2x1bW5dLCBkID0+IGRbc3RhY2tDb2x1bW5dKTtcbiAgY29uc3QgdG90YWxzID0gZDMucm9sbHVwKGRhdGEsIHYgPT4gdi5sZW5ndGgsIGQgPT4gZFtncm91cENvbHVtbl0pO1xuXG4gIHJldHVybiBBcnJheS5mcm9tKGdyb3VwZWQsIChba2V5LCB2YWx1ZXNdKSA9PiB7XG4gICAgY29uc3QgdG90YWwgPSB0b3RhbHMuZ2V0KGtleSk7XG4gICAgcmV0dXJuIEFycmF5LmZyb20odmFsdWVzLCAoW3N0YWNrS2V5LCBjb3VudF0pID0+ICh7XG4gICAgICBncm91cDoga2V5LFxuICAgICAgc3RhY2s6IHN0YWNrS2V5LFxuICAgICAgY291bnQsXG4gICAgICBwZXJjZW50YWdlOiAoY291bnQgLyB0b3RhbCkgKiAxMDBcbiAgICB9KSk7XG4gIH0pLmZsYXQoKTtcbn1cblxuZ3JvdXBlZF9iaXZhcmlhdGVfZGF0YSA9IGNhbGN1bGF0ZUdyb3VwZWRQZXJjZW50YWdlcyhkYXRhLCBcImRpYWdub3Npc1wiLCBzZWxlY3RlZF9iaXZhcmlhdGVfY2F0X2NvbHVtbik7XG5cblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJZKGdyb3VwZWRfYml2YXJpYXRlX2RhdGEsIHtcbiAgICAgIHg6IGQgPT4gZC5ncm91cCArIFwiOlwiICsgZC5zdGFjayxcbiAgICAgIHk6IFwicGVyY2VudGFnZVwiLFxuICAgICAgZmlsbDogXCJzdGFja1wiLFxuICAgICAgdGl0bGU6IGQgPT4gYCR7ZC5zdGFja306ICR7ZC5wZXJjZW50YWdlLnRvRml4ZWQoMSl9JWBcbiAgICB9KSxcbiAgICBQbG90LnRleHQoZ3JvdXBlZF9iaXZhcmlhdGVfZGF0YSwge1xuICAgICAgeDogZCA9PiBkLmdyb3VwICsgXCI6XCIgKyBkLnN0YWNrLFxuICAgICAgeTogZCA9PiBkLnBlcmNlbnRhZ2UsXG4gICAgICB0ZXh0OiBkID0+IGAke2QucGVyY2VudGFnZS50b0ZpeGVkKDEpfSVgLFxuICAgICAgZHk6IC00XG4gICAgfSlcbiAgXSxcbiAgeDoge1xuICAgIGxhYmVsOiBcIkRpYWdub3Npc1wiLFxuICAgIGRvbWFpbjogQXJyYXkuZnJvbShuZXcgU2V0KGdyb3VwZWRfYml2YXJpYXRlX2RhdGEubWFwKGQgPT4gZC5ncm91cCArIFwiOlwiICsgZC5zdGFjaykpKSxcbiAgICB0aWNrRm9ybWF0OiBkID0+IGQuc3BsaXQoXCI6XCIpWzBdIC8vIEZvcm1hdCB0aWNrcyB0byBzaG93IG9ubHkgdGhlIGdyb3VwXG4gIH0sXG4gIHk6IHtcbiAgICBsYWJlbDogXCJQZXJjZW50YWdlXCJcbiAgfSxcbiAgY29sb3I6IHtcbiAgICBsZWdlbmQ6IHRydWVcbiAgfVxufSlcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYml2YXJpYXRlX2NvbnRfY29sdW1ucyA9IFsnYWdlJywgJ0xZVkUxJywgJ1JFRzFCJywgJ1RGRjEnLCAnUkVHMUEnLCAnY3JlYXRpbmluZScsICdwbGFzbWFfQ0ExOV85J11cbnZpZXdvZiB4X2NvbHVtbiA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY29udF9jb2x1bW5zLCB7dmFsdWU6ICdhZ2UnfSlcbnZpZXdvZiB5X2NvbHVtbiA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY29udF9jb2x1bW5zLCB7dmFsdWU6ICdMWVZFMSd9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmRvdChkYXRhLCB7eDogeF9jb2x1bW4sIHk6IHlfY29sdW1uLCBmaWxsOiBcInN0ZWVsYmx1ZVwifSksXG4gICAgUGxvdC5saW5lYXJSZWdyZXNzaW9uWShkYXRhLCB7eDogeF9jb2x1bW4sIHk6IHlfY29sdW1uLCBzdHJva2U6IFwicmVkXCJ9KVxuICBdLFxuICB4OiB7XG4gICAgbGFiZWw6IHhfY29sdW1uXG4gIH0sXG4gIHk6IHtcbiAgICBsYWJlbDogeV9jb2x1bW5cbiAgfSxcbiAgY29sb3I6IHtcbiAgICBsZWdlbmQ6IGZhbHNlXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbnZpZXdvZiBzZWxlY3RlZF9iaXZhcmlhdGVfY29udF9jb2x1bW5zID0gSW5wdXRzLmNoZWNrYm94KGJpdmFyaWF0ZV9jb250X2NvbHVtbnMsIHt2YWx1ZTogYml2YXJpYXRlX2NvbnRfY29sdW1uc30pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEwIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZnVuY3Rpb24gY2FsY3VsYXRlQ29ycmVsYXRpb25NYXRyaXgoZGF0YSwgc2VsZWN0ZWRDb2x1bW5zKSB7XG4gIGNvbnN0IG4gPSBzZWxlY3RlZENvbHVtbnMubGVuZ3RoO1xuICBjb25zdCBjb3JyZWxhdGlvbk1hdHJpeCA9IEFycmF5LmZyb20oeyBsZW5ndGg6IG4gfSwgKCkgPT4gQXJyYXkobikuZmlsbCgwKSk7XG5cbiAgZnVuY3Rpb24gcGVhcnNvbkNvcnJlbGF0aW9uKHgsIHkpIHtcbiAgICBjb25zdCBtZWFuWCA9IGQzLm1lYW4oeCk7XG4gICAgY29uc3QgbWVhblkgPSBkMy5tZWFuKHkpO1xuICAgIGNvbnN0IGRpZmZYID0geC5tYXAoZCA9PiBkIC0gbWVhblgpO1xuICAgIGNvbnN0IGRpZmZZID0geS5tYXAoZCA9PiBkIC0gbWVhblkpO1xuICAgIGNvbnN0IG51bWVyYXRvciA9IGQzLnN1bShkaWZmWC5tYXAoKGQsIGkpID0+IGQgKiBkaWZmWVtpXSkpO1xuICAgIGNvbnN0IGRlbm9taW5hdG9yID0gTWF0aC5zcXJ0KGQzLnN1bShkaWZmWC5tYXAoZCA9PiBkICogZCkpICogZDMuc3VtKGRpZmZZLm1hcChkID0+IGQgKiBkKSkpO1xuICAgIHJldHVybiBudW1lcmF0b3IgLyBkZW5vbWluYXRvcjtcbiAgfVxuXG4gIGZvciAobGV0IGkgPSAwOyBpIDwgbjsgaSsrKSB7XG4gICAgZm9yIChsZXQgaiA9IDA7IGogPCBuOyBqKyspIHtcbiAgICAgIGNvbnN0IGNvbDEgPSBzZWxlY3RlZENvbHVtbnNbaV07XG4gICAgICBjb25zdCBjb2wyID0gc2VsZWN0ZWRDb2x1bW5zW2pdO1xuICAgICAgY29uc3QgdmFsdWVzMSA9IGRhdGEubWFwKGQgPT4gZFtjb2wxXSk7XG4gICAgICBjb25zdCB2YWx1ZXMyID0gZGF0YS5tYXAoZCA9PiBkW2NvbDJdKTtcbiAgICAgIGNvbnN0IGNvcnJlbGF0aW9uID0gcGVhcnNvbkNvcnJlbGF0aW9uKHZhbHVlczEsIHZhbHVlczIpO1xuICAgICAgY29ycmVsYXRpb25NYXRyaXhbaV1bal0gPSBjb3JyZWxhdGlvbjtcbiAgICB9XG4gIH1cblxuICByZXR1cm4gY29ycmVsYXRpb25NYXRyaXg7XG59XG5cbmNvcnJlbGF0aW9uX21hdHJpeCA9IGNhbGN1bGF0ZUNvcnJlbGF0aW9uTWF0cml4KGRhdGEsIHNlbGVjdGVkX2JpdmFyaWF0ZV9jb250X2NvbHVtbnMpO1xuY29ycmVsYXRpb25fZGF0YSA9IHNlbGVjdGVkX2JpdmFyaWF0ZV9jb250X2NvbHVtbnMuZmxhdE1hcCgoY29sMSwgaSkgPT5cbiAgc2VsZWN0ZWRfYml2YXJpYXRlX2NvbnRfY29sdW1ucy5tYXAoKGNvbDIsIGopID0+ICh7XG4gICAgeDogY29sMSxcbiAgICB5OiBjb2wyLFxuICAgIHZhbHVlOiBjb3JyZWxhdGlvbl9tYXRyaXhbaV1bal1cbiAgfSkpXG4pO1xuXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuY2VsbChjb3JyZWxhdGlvbl9kYXRhLCB7eDogXCJ4XCIsIHk6IFwieVwiLCBmaWxsOiBcInZhbHVlXCIsIHRpdGxlOiBkID0+IGQudmFsdWUudG9GaXhlZCgyKX0pLFxuICAgIFBsb3QudGV4dChjb3JyZWxhdGlvbl9kYXRhLCB7eDogXCJ4XCIsIHk6IFwieVwiLCB0ZXh0OiBkID0+IGQudmFsdWUudG9GaXhlZCgyKSwgZHk6IDAsIHRleHRBbmNob3I6IFwibWlkZGxlXCJ9KVxuICBdLFxuICB4OiB7XG4gICAgZG9tYWluOiBzZWxlY3RlZF9iaXZhcmlhdGVfY29udF9jb2x1bW5zLFxuICAgIGxhYmVsOiBcIlZhcmlhYmxlc1wiXG4gIH0sXG4gIHk6IHtcbiAgICBkb21haW46IHNlbGVjdGVkX2JpdmFyaWF0ZV9jb250X2NvbHVtbnMsXG4gICAgbGFiZWw6IFwiVmFyaWFibGVzXCJcbiAgfSxcbiAgY29sb3I6IHtcbiAgICB0eXBlOiBcImxpbmVhclwiLFxuICAgIHNjaGVtZTogXCJibHVlc1wiLFxuICAgIGxhYmVsOiBcIkNvcnJlbGF0aW9uXCJcbiAgfSxcbiAgd2lkdGg6IDYwMCxcbiAgaGVpZ2h0OiA2MDBcbn0pXG5cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB4X2NvbHVtbl9zY2F0dCA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY29udF9jb2x1bW5zLCB7dmFsdWU6ICdhZ2UnfSlcbnZpZXdvZiB5X2NvbHVtbl9zY2F0dCA9IElucHV0cy5yYWRpbyhiaXZhcmlhdGVfY29udF9jb2x1bW5zLCB7dmFsdWU6ICdMWVZFMSd9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5kb3QoZGF0YSwge3g6IHhfY29sdW1uX3NjYXR0LCB5OiB5X2NvbHVtbl9zY2F0dCwgZmlsbDogXCJkaWFnbm9zaXNcIiwgZmlsbE9wYWNpdHk6IDAuN30pXG4gIF0sXG4gIHg6IHtcbiAgICBsYWJlbDogeF9jb2x1bW5fc2NhdHRcbiAgfSxcbiAgeToge1xuICAgIGxhYmVsOiB5X2NvbHVtbl9zY2F0dFxuICB9LFxuICBjb2xvcjoge1xuICAgIGRvbWFpbjogWzEsIDBdLCAvLyBBc3N1bWluZyBcImRpYWdub3Npc1wiIGhhcyBiaW5hcnkgbGFiZWxzIGxpa2UgXCJwb3NpdGl2ZVwiIGFuZCBcIm5lZ2F0aXZlXCJcbiAgICByYW5nZTogW1wiYmx1ZVwiLCBcIm9yYW5nZVwiXSwgLy8gVXNlIGNvbnRyYXN0aW5nIGNvbG9ycyBsaWtlIGJsdWUgYW5kIG9yYW5nZVxuICAgIGxlZ2VuZDogdHJ1ZSAvLyBTaG93cyBhIGxlZ2VuZCBmb3IgdGhlIGJpbmFyeSBjYXRlZ29yaWVzXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkX2NvbHVtbl9jYXQnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2VsZWN0ZWRfY29sdW1uJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2Jpbl9jb3VudCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZF9iaXZhcmlhdGVfY2F0X2NvbHVtbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd4X2NvbHVtbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd5X2NvbHVtbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZF9iaXZhcmlhdGVfY29udF9jb2x1bW5zJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3hfY29sdW1uX3NjYXR0JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3lfY29sdW1uX3NjYXR0JykifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1374,8 +1579,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script type="text/javascript" src="page-nav-foot.js"></script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>

@@ -232,7 +232,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"options":{"fig-width":7,"read-only":"false","results":"markup","label":"","context":"interactive","dpi":72,"comment":"","message":"true","out-width":"700px","fig-height":5,"autorun":"","classes":"","warning":"true","output":"true","out-height":"","fig-cap":""},"code":"import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn import tree\nfrom sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix\n\ndata_url = \"https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv\"\ndata = pd.read_csv(data_url)\nfeatures = data.drop(\"diagnosis\", axis = 1) \ntarget = data.diagnosis\nX_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)\nprint(\"X train shape: \", X_train.shape)\nprint(\"X test shape: \", X_test.shape)"},{"id":2,"options":{"fig-width":7,"read-only":"false","results":"markup","label":"","context":"interactive","dpi":72,"comment":"","message":"true","out-width":"700px","fig-height":5,"autorun":"","classes":"","warning":"true","output":"true","out-height":"","fig-cap":""},"code":"import numpy as np\nDT_model = tree.DecisionTreeClassifier(max_leaf_nodes=3, max_depth=None,\n                                  class_weight=\"balanced\")\nDT_model = DT_model.fit(X_train, y_train)\ny_pred_DT = DT_model.predict(X_test)\nprint(\"Accuracy: \", np.round(accuracy_score(y_test, y_pred_DT), 2))\nprint(\"Precision: \",np.round(precision_score(y_test, y_pred_DT), 2))\nprint(\"Recall: \",np.round(recall_score(y_test, y_pred_DT), 2))\nprint(\"F1 Score: \", np.round(f1_score(y_test, y_pred_DT), 2))"},{"id":3,"options":{"fig-width":7,"read-only":"false","results":"markup","label":"","context":"interactive","dpi":72,"comment":"","message":"true","out-width":"700px","fig-height":5,"autorun":"","classes":"","warning":"true","output":"true","out-height":"","fig-cap":""},"code":"feature_names = list(X_train.columns)\ntext_representation = tree.export_text(DT_model, feature_names=feature_names)\nprint(text_representation)"}];
+globalThis.qpyodideCellDetails = [{"id":1,"options":{"message":"true","read-only":"false","autorun":"","comment":"","label":"","fig-height":5,"context":"interactive","fig-cap":"","dpi":72,"out-height":"","results":"markup","classes":"","fig-width":7,"warning":"true","output":"true","out-width":"700px"},"code":"import pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn import tree\nfrom sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, roc_auc_score, confusion_matrix\n\ndata_url = \"https://raw.githubusercontent.com/zadchin/RT-test/master/final_dataset.csv\"\ndata = pd.read_csv(data_url)\nfeatures = data.drop(\"diagnosis\", axis = 1) \ntarget = data.diagnosis\nX_train, X_test, y_train, y_test = train_test_split(features, target, test_size = 0.3, random_state=42)\nprint(\"X train shape: \", X_train.shape)\nprint(\"X test shape: \", X_test.shape)"},{"id":2,"options":{"message":"true","read-only":"false","autorun":"","comment":"","label":"","fig-height":5,"context":"interactive","fig-cap":"","dpi":72,"out-height":"","results":"markup","classes":"","fig-width":7,"warning":"true","output":"true","out-width":"700px"},"code":"import numpy as np\nDT_model = tree.DecisionTreeClassifier(max_leaf_nodes=3, max_depth=None,\n                                  class_weight=\"balanced\")\nDT_model = DT_model.fit(X_train, y_train)\ny_pred_DT = DT_model.predict(X_test)\nprint(\"Accuracy: \", np.round(accuracy_score(y_test, y_pred_DT), 2))\nprint(\"Precision: \",np.round(precision_score(y_test, y_pred_DT), 2))\nprint(\"Recall: \",np.round(recall_score(y_test, y_pred_DT), 2))\nprint(\"F1 Score: \", np.round(f1_score(y_test, y_pred_DT), 2))"},{"id":3,"options":{"message":"true","read-only":"false","autorun":"","comment":"","label":"","fig-height":5,"context":"interactive","fig-cap":"","dpi":72,"out-height":"","results":"markup","classes":"","fig-width":7,"warning":"true","output":"true","out-width":"700px"},"code":"feature_names = list(X_train.columns)\ntext_representation = tree.export_text(DT_model, feature_names=feature_names)\nprint(text_representation)"}];
 
 
 </script>
@@ -643,7 +643,8 @@ $$
 
 <section id="decision-tree" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="decision-tree"><span class="header-section-number">5.1</span> Decision Tree</h2>
-<p><span style="color:red;">Fill description</span>.</p>
+<p>Decision trees are tree-like models that make decisions based on asking a series of questions about the features of the data. Starting from a root node, the tree splits the data into subsets based on the most significant attribute at each step. This process continues recursively, forming branches and leaves, until a stopping criterion is met. The leaf nodes represent the final decisions or predictions.</p>
+<p>Decision trees are valuable for their simplicity and interpretability. Beyond healthcare, decision trees are useful in various fields such as finance, healthcare, and customer segmentation.</p>
 </section>
 <section id="train-test-split" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="train-test-split"><span class="header-section-number">5.2</span> Train-Test Split</h2>
@@ -682,13 +683,15 @@ Try Removing Class Weight, how does the metrics changes?
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Assume <code>class_weight="balanced"</code>, first test with <code>max_depth=None</code>, and then test with <code>max_depth=1</code>, observe the difference in the performance, and also in visualization of the tree?
+Increase <code>max_depth=None</code> observe the difference in the performance, and also in visualization of the tree?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Reducing <code>max_depth</code> from <code>None</code> to <code>1</code> decreases the recall and F1 score, indicating the model becomes less capable of identifying true positives, likely due to oversimplification. The oversimplication is reflected in the visualization of the tree.</p>
+<p><em>Hint:Max depth controls the maximum number of levels (or layers) in a decision tree. It determines how deep the tree can grow.</em></p>
+<!-- - Increasing Max Depth: Allows the tree to capture more complex patterns but can lead to overfitting, where the model performs well on training data but poorly on unseen data.
+- Decreasing Max Depth: Simplifies the model, reducing overfitting risk but possibly leading to underfitting, where the model is too simple to capture important patterns. -->
 </div>
 </div>
 </div>
@@ -1277,7 +1280,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script type="module">
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadchin/CS50Section/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script type="text/javascript" src="page-nav-foot.js"></script>
+<script type="module">
 /**
  * Factory function to create different types of cells based on options.
  * @param {Object} cellData - JSON object containing code, id, and options.

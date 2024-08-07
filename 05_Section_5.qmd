@@ -1,13 +1,16 @@
 ---
 title: Decision Tree
 format: html
+navbar: false
 filters:
   - pyodide
 ---
 
 ## Decision Tree
 
-[Fill description]{style="color:red;"}.
+Decision trees are tree-like models that make decisions based on asking a series of questions about the features of the data. Starting from a root node, the tree splits the data into subsets based on the most significant attribute at each step. This process continues recursively, forming branches and leaves, until a stopping criterion is met. The leaf nodes represent the final decisions or predictions.
+
+Decision trees are valuable for their simplicity and interpretability. Beyond healthcare, decision trees are useful in various fields such as finance, healthcare, and customer segmentation.
 
 
 ## Train-Test Split
@@ -66,11 +69,15 @@ Recall decreases when the class weight is removed, indicating that the model mis
 
 ::: {.callout-note collapse="true" appearance="simple"}
 
-## Assume `class_weight="balanced"`, first test with `max_depth=None`, and then test with `max_depth=1`, observe the difference in the performance, and also in visualization of the tree?
+## Increase `max_depth=None` observe the difference in the performance, and also in visualization of the tree?
 
-Reducing `max_depth` from `None` to `1` decreases the recall and F1 score, indicating the model becomes less capable of identifying true positives, likely due to oversimplification. The oversimplication is reflected in the visualization of the tree.
+*Hint:Max depth controls the maximum number of levels (or layers) in a decision tree. It determines how deep the tree can grow.*
+
+<!-- - Increasing Max Depth: Allows the tree to capture more complex patterns but can lead to overfitting, where the model performs well on training data but poorly on unseen data.
+- Decreasing Max Depth: Simplifies the model, reducing overfitting risk but possibly leading to underfitting, where the model is too simple to capture important patterns. -->
 
 :::
+
 
 ## Visualizing the tree
 
